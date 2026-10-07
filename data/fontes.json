@@ -1,0 +1,17 @@
+{
+  "taxas_municipais.csv": {
+    "url": "https://www.ispdados.rj.gov.br/Arquivos/BaseMunicipioTaxaMes.csv",
+    "acesso": "2026-09-30",
+    "sha256": "4aa75a0378f30a441d80e5b848d68a4af146909fd93bfb11c4b244f7b9cfccb4"
+  },
+  "contagens_municipais.csv": {
+    "url": "https://www.ispdados.rj.gov.br/Arquivos/BaseMunicipioMensal.csv",
+    "acesso": "2026-10-07",
+    "sha256": "a9458e23fb8a34c75080759d496bf56e8784309394686416da0bdd5a34230466"
+  },
+  "dicionario_taxas.xlsx": {
+    "url": "https://www.ispdados.rj.gov.br/Arquivos/DicionarioDeVariaveisBaseMunic%C3%ADpioTaxaM%C3%AAs.xlsx",
+    "acesso": "2026-10-07",
+    "sha256": "24fe463e1426d8369448d42dbab8995515629d6461e308b842682fb77c1fe824"
+  }
+}

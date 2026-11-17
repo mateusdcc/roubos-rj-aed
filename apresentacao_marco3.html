@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roubos no RJ: Uma Mudança Igual para Todos? — Apresentação Final (Marco 3)</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --primary: #58a6ff;
+      --accent: #238636;
+      --warn: #d29922;
+      --danger: #f85149;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 12px 24px;
+      background: rgba(22, 27, 34, 0.8);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+    .badge {
+      background: rgba(88, 166, 255, 0.15);
+      color: var(--primary);
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+    .slide-container {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      max-width: 1200px;
+      height: 90%;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px 48px;
+      overflow-y: auto;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.5);
+      animation: fadeIn 0.25s ease-out;
+    }
+    .slide.active {
+      display: flex;
+      flex-direction: column;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 { font-size: 2.2rem; margin-bottom: 12px; color: #fff; line-height: 1.2; }
+    h2 { font-size: 1.5rem; margin-bottom: 18px; color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    h3 { font-size: 1.15rem; color: #f0f6fc; margin: 12px 0 6px; }
+    p, li { font-size: 1.05rem; line-height: 1.6; color: #c9d1d9; }
+    ul { margin-left: 24px; margin-bottom: 16px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; flex: 1; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 16px; }
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .card-title { font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+    .stat-number { font-size: 2.4rem; font-weight: 800; color: #fff; }
+    .stat-desc { font-size: 0.9rem; color: var(--text-muted); }
+    img.slide-img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+    .speaker-notes {
+      margin-top: 16px;
+      background: rgba(210, 153, 34, 0.1);
+      border-left: 4px solid var(--warn);
+      padding: 12px 16px;
+      border-radius: 4px;
+      font-size: 0.92rem;
+      color: #e3b341;
+    }
+    .speaker-notes strong { color: #f0883e; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.95rem; }
+    th, td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
+    th { background: rgba(255,255,255,0.06); color: #fff; }
+    footer {
+      padding: 12px 24px;
+      background: rgba(22, 27, 34, 0.8);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-btn {
+      background: #21262d;
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: #30363d; border-color: #8b949e; }
+    .nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .progress-bar {
+      flex: 1;
+      height: 6px;
+      background: #21262d;
+      border-radius: 3px;
+      margin: 0 20px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--primary);
+      width: 9%;
+      transition: width 0.2s;
+    }
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ctrl-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .ctrl-btn:hover { background: rgba(255, 255, 255, 0.16); }
+    body.hide-notes .speaker-notes { display: none !important; }
+
+    @media print {
+      body { overflow: visible !important; height: auto !important; background: #fff !important; color: #111 !important; }
+      header, footer, .speaker-notes, .badge, .nav-btn, .progress-bar, .ctrl-btn { display: none !important; }
+      .slide-container { display: block !important; padding: 0 !important; height: auto !important; }
+      .slide {
+        display: flex !important;
+        opacity: 1 !important;
+        page-break-after: always;
+        break-after: page;
+        width: 100% !important;
+        max-width: none !important;
+        min-height: 95vh !important;
+        height: auto !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: #fff !important;
+        color: #111 !important;
+        padding: 24px 32px !important;
+      }
+      h1, h2, h3, p, li, td, th, span, div { color: #111 !important; }
+      h2 { border-bottom: 2px solid #0072b2 !important; color: #0072b2 !important; }
+      .card { background: #f6f8fa !important; border: 1px solid #d0d7de !important; color: #111 !important; }
+      th { background: #e1e4e8 !important; color: #111 !important; }
+      td, th { border: 1px solid #d0d7de !important; color: #111 !important; }
+      img.slide-img { border: 1px solid #d0d7de !important; max-height: 400px !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>FGV EMAp</strong> · Análise Exploratória de Dados e Visualização (2026.2)</div>
+    <div class="header-controls">
+      <button class="ctrl-btn" onclick="toggleNotes()" title="Mostrar ou ocultar notas de fala (Atalho: S)">Notas [S]</button>
+      <button class="ctrl-btn" onclick="window.print()" title="Imprimir slides ou salvar em PDF (Atalho: P)">Imprimir / PDF [P]</button>
+      <button class="ctrl-btn" onclick="toggleFullscreen()" title="Modo tela cheia (Atalho: F)">Tela Cheia [F]</button>
+      <div class="badge" id="slide-timing">0:00 – 1:15</div>
+    </div>
+  </header>
+
+  <div class="slide-container">
+
+    <!-- SLIDE 1 -->
+    <div class="slide active" data-timing="0:00 – 1:15">
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+        <span class="badge" style="width: fit-content; margin-bottom: 12px;">Entrega Final · Marco 3</span>
+        <h1>Roubos no Rio de Janeiro:<br><span style="color: var(--primary);">uma mudança igual para todos?</span></h1>
+        <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 24px;">Análise Exploratória e Visualização de 11 Anos de Ocorrências Policiais (2014–2024)</p>
+        
+        <div class="card" style="margin-bottom: 24px;">
+          <p><strong>Autores:</strong> Mateus Cavalcanti, Pedro Braga e Felipe · <strong>Docente:</strong> Prof. João Rulff</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-title">Hipótese 1 (H1)</div>
+            <p style="font-size: 0.92rem;">Queda generalizada das taxas médias municipais em 2024 vs. 2014.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Hipótese 2 (H2)</div>
+            <p style="font-size: 0.92rem;">Heterogeneidade territorial profunda entre regiões e municípios do estado.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Hipótese 3 (H3)</div>
+            <p style="font-size: 0.92rem;">Existência de padrões estacionais mensais estatisticamente recorrentes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="speaker-notes">
+        <strong>Fala do Apresentador (0:00–1:15):</strong> Abrir contextualizando o perigo das médias agregadas que escondem armadilhas ecológicas. Apresentar os 11 anos de registros e as 3 hipóteses norteadoras.
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide" data-timing="1:15 – 2:30">
+      <h2>Dados, Rigor e Decisões Metodológicas</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Fonte e Abstração</h3>
+          <ul>
+            <li><strong>Base:</strong> Instituto de Segurança Pública (ISP-RJ).</li>
+            <li><strong>Cobertura:</strong> 132 meses contínuos (janeiro/2014 a dezembro/2024).</li>
+            <li><strong>Integridade:</strong> Validação criptográfica com hashes SHA-256 no notebook.</li>
+          </ul>
+
+          <h3>Três Decisões Metodológicas</h3>
+          <ul>
+            <li><strong>Denominadores distintos:</strong> Roubo de rua por 100 mil hab.; roubo de veículo por 100 mil veículos (frota). Comparamos trajetórias, nunca níveis absolutos.</li>
+            <li><strong>Painel Conservador de 82 Municípios:</strong> 10 municípios tinham 40 meses consecutivos zerados no início da série (subnotificação). Excluímos da série 2014-2024 para evitar viés de aumento espúrio.</li>
+            <li><strong>Média Não-Ponderada:</strong> Cada município tem peso unitário. Descreve o <em>município típico</em>, evitando que a Capital absorva a análise.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card" style="text-align: center; margin-bottom: 16px;">
+            <div class="stat-number">82</div>
+            <div class="stat-desc">Municípios no Painel Principal Balanceado (10.824 observações)</div>
+          </div>
+          <div class="card" style="text-align: center;">
+            <div class="stat-number">132</div>
+            <div class="stat-desc">Meses analisados em cada município</div>
+          </div>
+        </div>
+      </div>
+      <div class="speaker-notes">
+        <strong>Fala do Apresentador (1:15–2:30):</strong> Enfatizar o rigor da auditoria inicial. Explicar por que os 10 municípios foram excluídos inicialmente e a separação dos denominadores (hab vs veículos).
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide" data-timing="2:30 – 3:45">
+      <h2>Pergunta 1: Trajetória Temporal Agregada (H1)</h2>
+      <div class="grid-2">
+        <div>
+          <img src="figuras/01_trajetorias.png" class="slide-img" alt="Trajetórias Médias">
+        </div>
+        <div>
+          <h3>Resultados Principais (2014–2024)</h3>
+          <ul>
+            <li><strong>Roubo de Rua:</strong> Média cai de <strong>13,99</strong> para <strong>6,15</strong> por 100 mil hab. (<span style="color:var(--accent); font-weight:bold;">−56,0%</span>).</li>
+            <li><strong>Roubo de Veículo:</strong> Média cai de <strong>20,78</strong> para <strong>8,80</strong> por 100 mil veículos (<span style="color:var(--accent); font-weight:bold;">−57,6%</span>).</li>
+          </ul>
+
+          <h3>O Caminho Oscilou: Ciclo de Alta e Queda</h3>
+          <ul>
+            <li><strong>2014–2017 (Crise Fiscal e Pós-Olímpica):</strong> Forte escalada. Pico de rua em 2016 (20,89) e pico de veículos em 2017 (28,07).</li>
+            <li><strong>2018–2024:</strong> Queda acentuada a partir da intervenção federal e choque da pandemia de 2020.</li>
+            <li><strong>Veredito H1:</strong> <span style="color:var(--accent); font-weight:bold;">Confirmada descritivamente</span> no nível médio do painel.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="speaker-notes">
+        <strong>Fala do Apresentador (2:30–3:45):</strong> Apresentar a queda superior a 55% em ambas as categorias, mas destacar que o caminho passou por uma grave explosão em 2016 e 2017 antes de recuar.
+      </div>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="slide" data-timing="3:45 – 4:30">
+      <h2>Pergunta 2: Fratura e Disparidades Regionais (H2)</h2>
+      <div class="grid-2">
+        <div>
+          <img src="figuras/02_regioes.png" class="slide-img" alt="Trajetórias Regionais">
+        </div>
+        <div>
+          <h3>Divergências Gritantes entre Regiões</h3>
+          <ul>
+            <li><strong>Interior (65 municípios):</strong> Patamares historicamente muito mais baixos (2024: rua 2,45; veículos 2,14).</li>
+            <li><strong>Grande Niterói (3 mun.):</strong> Queda acentuada de 65,65 para 15,82 em veículos (<span style="color:var(--accent); font-weight:bold;">−75,9%</span>).</li>
+            <li><strong>Baixada Fluminense (13 mun.):</strong> Taxas altíssimas (pico de 102,7 em 2017), caindo para 39,23 em 2024 (<span style="color:var(--accent); font-weight:bold;">−45,5%</span>).</li>
+            <li><strong>A Anomalia da Capital:</strong> Em roubo de veículos, a Capital passou de <strong>40,71 (2014)</strong> para <strong>41,96 (2024)</strong> — aumento de <span style="color:var(--danger); font-weight:bold;">+3,1%</span>!</li>
+          </ul>
+          <div class="card" style="margin-top: 12px; border-left: 4px solid var(--danger);">
+            <strong>Insight:</strong> Uma conclusão agregada de queda esconde o fato de que roubos veiculares na Capital não diminuíram na década.
+          </div>
+        </div>
+      </div>
+      <div class="speaker-notes">
+        <strong>Fala do Apresentador (3:45–4:30):</strong> Chamar a atenção para a anomalia da Capital: enquanto o estado caía 57%, o roubo de veículos na Capital terminou 2024 em patamar superior a 2014.
+      </div>
+    </div>
+
+    <!-- SLIDE 5 -->
+    <div class="slide" data-timing="4:30 – 5:15">
+      <h2>Pergunta 3: Municípios em Destaque — Extremos e Assimetrias</h2>
+      <div class="grid-2">
+        <div>
+          <img src="figuras/03_mudancas_municipais.png" class="slide-img" alt="Mudanças Municipais">
+        </div>
+        <div>
+          <h3>Balanço Geral no Painel (82 Municípios)</h3>
+          <ul>
+            <li><strong>Roubo de Rua:</strong> 65 quedas / 12 aumentos / 5 estáveis.</li>
+            <li><strong>Roubo de Veículos:</strong> 65 quedas / 7 aumentos / 10 estáveis.</li>
+          </ul>
+
+          <h3>Casos Críticos</h3>
+          <ul>
+            <li><strong>Belford Roxo:</strong> Aumento chocante de <span style="color:var(--danger); font-weight:bold;">+17,43</span> na taxa mensal de veículos (ultrapassando 120 por 100 mil veículos).</li>
+            <li><strong>Grandes Reduções:</strong> Nilópolis (−94,8 em veículos, −64,9 em rua) e São Gonçalo (−92,4 em veículos, −63,8 em rua).</li>
+            <li><strong>Veredito H2:</strong> <span style="color:var(--accent); font-weight:bold;">Plenamente Confirmada</span> — extrema polarização espacial.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="speaker-notes">
+        <strong>Fala do Apresentador (4:30–5:15):</strong> Demonstrar a assimetria na Baixada: Nilópolis reduziu 94 pontos enquanto Belford Roxo subiu 17 pontos. Prova irrefutável de H2.
+      </div>
+    </div>
+
+    <!-- SLIDE 6 -->
+    <div class="slide" data-timing="5:15 – 6:00">
+      <h2>Pergunta 4: Dispersão e Desigualdade Intermunicipal</h2>
+      <div class="grid-2">
+        <div>
+          <img src="figuras/04_dispersao.png" class="slide-img" alt="Dispersão">
+        </div>
+        <div>
+          <h3>Estreitamento Absoluto da Distribuição</h3>
+          <ul>
+            <li><strong>Intervalo Interdecil (P90 − P10):</strong></li>
+            <li>Roubo de Rua: caiu de 38,38 para 18,06 (<span style="color:var(--accent); font-weight:bold;">−53,0%</span>).</li>
+            <li>Roubo de Veículos: caiu de 55,48 para 18,23 (<span style="color:var(--accent); font-weight:bold;">−67,1%</span>).</li>
+          </ul>
+
+          <h3>Interpretação Cuidadosa</h3>
+          <ul>
+            <li>A dispersão <em>absoluta</em> diminuiu porque a grande maioria dos municípios convergiu para patamares baixos.</li>
+            <li>Porém, isso <strong>não significa igualdade territorial</strong>: a cauda superior continua afastada da mediana, e a dispersão relativa e o risco de vitimização permanecem extremamente concentrados na Região Metropolitana.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="speaker-notes">
+        <strong>Fala do Apresentador (5:15–6:00):</strong> Explicar a diferença entre dispersão absoluta (que estreita pelo rebaixamento dos níveis) e igualdade real (que não ocorreu, pois a cauda metropolitana continua no topo).
+      </div>
+    </div>
+
+    <!-- SLIDE 7 -->
+    <div class="slide" data-timing="6:00 – 6:45">
+      <h2>Pergunta 5: A Grande Mutação — A Ascensão do Celular</h2>
+      <div class="grid-2">
+        <div>
+          <img src="figuras/07_decomposicao_rua.png" class="slide-img" alt="Decomposição dos Roubos de Rua">
+        </div>
+        <div>
+          <h3>Substituição Criminológica nas Ruas</h3>
+          <ul>
+            <li><strong>Participação do Celular:</strong> Saltou de <strong>8,1% (2014)</strong> para <strong>36,6% (2024)</strong> dos roubos de rua (+28,5 p.p.).</li>
+            <li><strong>Contagens Absolutas no Painel:</strong>
+              <ul>
+                <li>Roubo a Transeunte: despencou de 80.461 para 30.868 (<span style="color:var(--accent); font-weight:bold;">−61,6%</span>).</li>
+                <li>Roubo em Coletivo: caiu de 7.314 para 6.235.</li>
+                <li><strong>Roubo de Celular:</strong> saltou de 7.758 para <strong>21.416</strong> (<span style="color:var(--danger); font-weight:bold;">+176,0%</span>)!</li>
+              </ul>
+            </li>
+          </ul>
+          <div class="card" style="margin-top: 12px; border-left: 4px solid var(--primary);">
+            <strong>Causa Estrutural:</strong> O smartphone virou o ativo de máxima liquidez urbana: revenda de aparelhos, mercado de peças e acesso a bancos e PIX.
+          </div>
+        </div>
+      </div>
+      <div class="speaker-notes">
+        <strong>Fala do Apresentador (6:00–6:45):</strong> O grande insight qualitativo: enquanto os roubos tradicionais caem, os roubos específicos de smartphone quase triplicaram em números absolutos.
+      </div>
+    </div>
+
+    <!-- SLIDE 8 -->
+    <div class="slide" data-timing="6:45 – 7:30">
+      <h2>Pergunta 6: Sazonalidade dos Roubos e o Choque de 2020</h2>
+      <div class="grid-2">
+        <div>
+          <img src="figuras/06_perfil_mensal.png" class="slide-img" alt="Perfil Mensal">
+        </div>
+        <div>
+          <h3>Metodologia de Padronização</h3>
+          <ul>
+            <li>Taxas diárias (ajustadas por dias do mês) indexadas em 100 pela média anual de cada município.</li>
+          </ul>
+
+          <h3>Padrões Recorrentes</h3>
+          <ul>
+            <li><strong>Roubo de Rua:</strong> Pico sistemático em <strong>fevereiro</strong> (índice 118,2) — verão, Carnaval, grandes aglomerações. Menor em setembro/outubro.</li>
+            <li><strong>Roubo de Veículos:</strong> Pico em <strong>janeiro</strong> (índice 121,5) e março — turismo, férias e trânsito intenso. Menor entre junho e setembro.</li>
+            <li><strong>Efeito Pandemia (2020):</strong> Despencou em abril/maio devido ao lockdown. A exclusão de 2020 confirma a robustez do padrão.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="speaker-notes">
+        <strong>Fala do Apresentador (6:45–7:30):</strong> Mostrar os picos do verão fluminense (fevereiro para rua e janeiro para veículos) e o efeito exógeno temporário da quarentena de 2020.
+      </div>
+    </div>
+
+    <!-- SLIDE 9 -->
+    <div class="slide" data-timing="7:30 – 8:15">
+      <h2>Validação Estatística da Sazonalidade (Marco 3)</h2>
+      <div class="grid-2">
+        <div>
+          <img src="figuras/08_sazonalidade_heatmap.png" class="slide-img" alt="Heatmap Sazonalidade">
+        </div>
+        <div>
+          <h3>Fechando a Hipótese 3 com Rigor Formal</h3>
+          <p>No Marco 2, a hipótese de sazonalidade permaneceu em aberto. No Marco 3, aplicamos o teste não-paramétrico de <strong>Kruskal-Wallis</strong> ao longo dos 11 anos:</p>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Categoria</th>
+                <th>Amostra</th>
+                <th>Estatística H</th>
+                <th>p-valor</th>
+                <th>Significância</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Roubo de Rua</strong></td>
+                <td>Todos os anos</td>
+                <td>24,34</td>
+                <td><strong>0,011</strong></td>
+                <td><span style="color:var(--accent);">p &lt; 0,05</span></td>
+              </tr>
+              <tr>
+                <td><strong>Roubo de Rua</strong></td>
+                <td>Sem 2020</td>
+                <td>20,88</td>
+                <td><strong>0,035</strong></td>
+                <td><span style="color:var(--accent);">p &lt; 0,05</span></td>
+              </tr>
+              <tr>
+                <td><strong>Roubo de Veículo</strong></td>
+                <td>Todos os anos</td>
+                <td>39,83</td>
+                <td><strong>0,00004</strong></td>
+                <td><span style="color:var(--accent);">p &lt; 0,001</span></td>
+              </tr>
+              <tr>
+                <td><strong>Roubo de Veículo</strong></td>
+                <td>Sem 2020</td>
+                <td>35,21</td>
+                <td><strong>0,00023</strong></td>
+                <td><span style="color:var(--accent);">p &lt; 0,001</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="card" style="margin-top: 16px;">
+            <strong>Veredito H3:</strong> <span style="color:var(--accent); font-weight:bold;">Confirmada Estatisticamente</span>. Rejeitamos a hipótese de igualdade entre meses para ambas as categorias.
+          </div>
+        </div>
+      </div>
+      <div class="speaker-notes">
+        <strong>Fala do Apresentador (7:30–8:15):</strong> O grande diferencial técnico: apresentar o teste de Kruskal-Wallis com p-valores significativos que comprovam estatisticamente a sazonalidade.
+      </div>
+    </div>
+
+    <!-- SLIDE 10 -->
+    <div class="slide" data-timing="8:15 – 9:00">
+      <h2>Sensibilidade e Robustez do Recorte</h2>
+      <div style="flex: 1;">
+        <h3>Comparação dos 82 vs. Todos os 92 Municípios (2018–2024)</h3>
+        <p style="margin-bottom: 16px;">Para atestar que a exclusão dos 10 municípios não distorceu os resultados, reexecutamos os cálculos no período em que todos os municípios tinham dados válidos:</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Painel</th>
+              <th>Categoria</th>
+              <th>Média 2018</th>
+              <th>Média 2024</th>
+              <th>Variação (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>82 municípios</td>
+              <td>Roubo de rua</td>
+              <td>20,20</td>
+              <td>6,15</td>
+              <td><strong>−69,5%</strong></td>
+            </tr>
+            <tr>
+              <td>92 municípios</td>
+              <td>Roubo de rua</td>
+              <td>18,05</td>
+              <td>5,49</td>
+              <td><strong>−70,5%</strong></td>
+            </tr>
+            <tr>
+              <td>82 municípios</td>
+              <td>Roubo de veículos</td>
+              <td>24,67</td>
+              <td>8,80</td>
+              <td><strong>−64,3%</strong></td>
+            </tr>
+            <tr>
+              <td>92 municípios</td>
+              <td>Roubo de veículos</td>
+              <td>22,12</td>
+              <td>7,77</td>
+              <td><strong>−64,9%</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="card" style="margin-top: 24px;">
+          <div class="card-title">Conclusão de Sensibilidade</div>
+          <p>A magnitude e o sentido das variações são idênticos nos dois painéis. A precaução metodológica adotada na auditoria protegeu a análise sem induzir qualquer viés de seleção.</p>
+        </div>
+      </div>
+      <div class="speaker-notes">
+        <strong>Fala do Apresentador (8:15–9:00):</strong> Mostrar a estabilidade do modelo: mesmo incluindo os 10 municípios na janela 2018-2024, as taxas caem exatamente a mesma proporção.
+      </div>
+    </div>
+
+    <!-- SLIDE 11 -->
+    <div class="slide" data-timing="9:00 – 10:00">
+      <h2>Síntese dos Achados, Limitações e Fechamento</h2>
+      <div class="grid-2">
+        <div>
+          <h3>As Três Respostas da Pesquisa</h3>
+          <ol style="margin-left: 20px; line-height: 1.8;">
+            <li><strong>H1 (Queda Agregada):</strong> Confirmada (−56% rua, −58% veículos), mas com crise severa e picos em 2016-2017.</li>
+            <li><strong>H2 (Heterogeneidade):</strong> Confirmada categoricamente. A Capital aumentou roubos veiculares (+3,1%) e Belford Roxo explodiu (+17,4).</li>
+            <li><strong>H3 (Sazonalidade):</strong> Confirmada com validação formal de Kruskal-Wallis ($p &lt; 0,05$), com picos de verão.</li>
+          </ol>
+
+          <h3 style="margin-top: 16px;">Mutação Estrutural</h3>
+          <p>O roubo de celular saltou de 8,1% para 36,6% do total de rua (quase triplicando em contagens absolutas).</p>
+        </div>
+        <div>
+          <h3>Limitações Epistemológicas</h3>
+          <ul>
+            <li><strong>Subnotificação Policial:</strong> Lidamos com registros de queixa, não com o censo total de crimes.</li>
+            <li><strong>Incentivo de Registro:</strong> Seguros de celular e veículos impulsionam registros de B.O.</li>
+            <li><strong>Não-Causalidade:</strong> O estudo é rigorosamente descritivo e exploratório; não inferimos causalidade de políticas.</li>
+          </ul>
+
+          <div class="card" style="margin-top: 20px; text-align: center; border-color: var(--primary);">
+            <p><strong>Repositório do Projeto:</strong></p>
+            <p><a href="https://github.com/mateusdcc/roubos-rj-aed" target="_blank" style="color:var(--primary); font-weight:bold; text-decoration:none;">github.com/mateusdcc/roubos-rj-aed</a></p>
+            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-muted);">Notebook, Dados, Scripts e Figuras 100% Reprodutíveis</p>
+          </div>
+        </div>
+      </div>
+      <div class="speaker-notes">
+        <strong>Fala do Apresentador (9:00–10:00):</strong> Resumo executivo, limites científicos da pesquisa e agradecimento à banca, abrindo para perguntas.
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <button class="nav-btn" id="prev-btn" onclick="prevSlide()">← Anterior</button>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <span style="font-size: 0.9rem; color: var(--text-muted);" id="slide-num">Slide 1 / 11</span>
+    <button class="nav-btn" id="next-btn" onclick="nextSlide()" style="margin-left: 16px;">Próximo →</button>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const timingBadge = document.getElementById('slide-timing');
+    const slideNum = document.getElementById('slide-num');
+    const progressFill = document.getElementById('progress-fill');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    function showSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (index + totalSlides) % totalSlides;
+      slides[currentSlide].classList.add('active');
+
+      timingBadge.textContent = slides[currentSlide].getAttribute('data-timing') || '';
+      slideNum.textContent = `Slide ${currentSlide + 1} / ${totalSlides}`;
+      progressFill.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+
+      prevBtn.disabled = currentSlide === 0;
+      nextBtn.disabled = currentSlide === totalSlides - 1;
+    }
+
+    function nextSlide() { if (currentSlide < totalSlides - 1) showSlide(currentSlide + 1); }
+    function prevSlide() { if (currentSlide > 0) showSlide(currentSlide - 1); }
+
+    function toggleNotes() {
+      document.body.classList.toggle('hide-notes');
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 's' || e.key === 'S') {
+        toggleNotes();
+      } else if (e.key === 'f' || e.key === 'F') {
+        toggleFullscreen();
+      } else if (e.key === 'p' || e.key === 'P') {
+        if (!e.ctrlKey && !e.metaKey) {
+          window.print();
+        }
+      } else if (e.key === 'Home') {
+        showSlide(0);
+      } else if (e.key === 'End') {
+        showSlide(totalSlides - 1);
+      }
+    });
+
+    showSlide(0);
+  </script>
+</body>
+</html>

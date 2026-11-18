@@ -8,6 +8,7 @@
     :root {
       --bg: #0d1117;
       --card-bg: #161b22;
+      --card-light: #21262d;
       --border: #30363d;
       --text: #e6edf3;
       --text-muted: #8b949e;
@@ -15,6 +16,8 @@
       --accent: #238636;
       --warn: #d29922;
       --danger: #f85149;
+      --blue: #0072B2;
+      --orange: #D55E00;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -43,6 +46,20 @@
       font-weight: 600;
       font-size: 0.8rem;
     }
+    .badge-blue {
+      background: rgba(0, 114, 178, 0.2);
+      color: #58a6ff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .badge-orange {
+      background: rgba(213, 94, 0, 0.2);
+      color: #f0883e;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
     .slide-container {
       flex: 1;
       position: relative;
@@ -55,63 +72,63 @@
     .slide {
       display: none;
       width: 100%;
-      max-width: 1200px;
-      height: 90%;
+      max-width: 1240px;
+      height: 92%;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 36px 48px;
+      padding: 32px 44px;
       overflow-y: auto;
       box-shadow: 0 12px 36px rgba(0,0,0,0.5);
-      animation: fadeIn 0.25s ease-out;
+      animation: fadeIn 0.2s ease-out;
     }
     .slide.active {
       display: flex;
       flex-direction: column;
     }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
+      from { opacity: 0; transform: translateY(4px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    h1 { font-size: 2.2rem; margin-bottom: 12px; color: #fff; line-height: 1.2; }
-    h2 { font-size: 1.5rem; margin-bottom: 18px; color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-    h3 { font-size: 1.15rem; color: #f0f6fc; margin: 12px 0 6px; }
-    p, li { font-size: 1.05rem; line-height: 1.6; color: #c9d1d9; }
-    ul { margin-left: 24px; margin-bottom: 16px; }
+    h1 { font-size: 2.1rem; margin-bottom: 10px; color: #fff; line-height: 1.2; }
+    h2 { font-size: 1.45rem; margin-bottom: 16px; color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    h3 { font-size: 1.1rem; color: #f0f6fc; margin: 10px 0 6px; }
+    p, li { font-size: 1.0rem; line-height: 1.55; color: #c9d1d9; }
+    ul { margin-left: 20px; margin-bottom: 12px; }
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; flex: 1; }
-    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 16px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 14px; }
     .card {
       background: rgba(255,255,255,0.03);
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 16px;
     }
-    .card-title { font-weight: 700; color: var(--primary); margin-bottom: 6px; }
-    .stat-number { font-size: 2.4rem; font-weight: 800; color: #fff; }
-    .stat-desc { font-size: 0.9rem; color: var(--text-muted); }
+    .card-title { font-weight: 700; color: var(--primary); margin-bottom: 6px; font-size: 1.05rem; }
+    .stat-number { font-size: 2.2rem; font-weight: 800; color: #fff; }
+    .stat-desc { font-size: 0.88rem; color: var(--text-muted); }
     img.slide-img {
       width: 100%;
-      max-height: 480px;
+      max-height: 470px;
       object-fit: contain;
       border-radius: 8px;
       border: 1px solid var(--border);
       background: #fff;
     }
     .speaker-notes {
-      margin-top: 16px;
+      margin-top: 14px;
       background: rgba(210, 153, 34, 0.1);
       border-left: 4px solid var(--warn);
-      padding: 12px 16px;
+      padding: 10px 14px;
       border-radius: 4px;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: #e3b341;
     }
     .speaker-notes strong { color: #f0883e; }
-    table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.95rem; }
-    th, td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
-    th { background: rgba(255,255,255,0.06); color: #fff; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.92rem; }
+    th, td { border: 1px solid var(--border); padding: 7px 10px; text-align: left; }
+    th { background: rgba(255,255,255,0.06); color: #fff; font-weight: 600; }
     footer {
-      padding: 12px 24px;
+      padding: 10px 24px;
       background: rgba(22, 27, 34, 0.8);
       border-top: 1px solid var(--border);
       display: flex;
@@ -122,10 +139,10 @@
       background: #21262d;
       color: var(--text);
       border: 1px solid var(--border);
-      padding: 8px 18px;
+      padding: 7px 16px;
       border-radius: 6px;
       cursor: pointer;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       transition: all 0.2s;
     }
     .nav-btn:hover { background: #30363d; border-color: #8b949e; }
@@ -191,427 +208,436 @@
     }
   </style>
 </head>
-<body>
+<body class="hide-notes">
 
   <header>
     <div><strong>FGV EMAp</strong> · Análise Exploratória de Dados e Visualização (2026.2)</div>
     <div class="header-controls">
       <button class="ctrl-btn" onclick="toggleNotes()" title="Mostrar ou ocultar notas de fala (Atalho: S)">Notas [S]</button>
       <button class="ctrl-btn" onclick="window.print()" title="Imprimir slides ou salvar em PDF (Atalho: P)">Imprimir / PDF [P]</button>
-      <button class="ctrl-btn" onclick="toggleFullscreen()" title="Modo tela cheia (Atalho: F)">Tela Cheia [F]</button>
-      <div class="badge" id="slide-timing">0:00 – 1:15</div>
+      <button class="ctrl-btn" onclick="toggleFullscreen()" title="Tela cheia (Atalho: F)">Tela Cheia [F]</button>
+      <span class="badge" id="slide-timing">Tempo: 0:00–1:15</span>
     </div>
   </header>
 
-  <div class="slide-container">
+  <main class="slide-container">
 
-    <!-- SLIDE 1 -->
-    <div class="slide active" data-timing="0:00 – 1:15">
+    <!-- SLIDE 1: Capa -->
+    <div class="slide active" data-timing="0:00–1:15">
       <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-        <span class="badge" style="width: fit-content; margin-bottom: 12px;">Entrega Final · Marco 3</span>
-        <h1>Roubos no Rio de Janeiro:<br><span style="color: var(--primary);">uma mudança igual para todos?</span></h1>
-        <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 24px;">Análise exploratória e visualização de ocorrências policiais (2014–2024)</p>
-        
-        <div class="card" style="margin-bottom: 24px;">
-          <p><strong>Autores:</strong> Pedro Braga e Felipe (com colaboração de Mateus Cavalcanti nos Marcos 1 e 2) · <strong>Docente:</strong> Prof. João Rulff</p>
-        </div>
+        <span class="badge" style="width: fit-content; margin-bottom: 16px;">Entrega Final · Marco 3</span>
+        <h1 style="font-size: 2.5rem;">Roubos no Rio de Janeiro:<br><span style="color: var(--primary);">uma mudança igual para todos?</span></h1>
+        <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 24px;">
+          Análise exploratória e visualização de ocorrências policiais em painel municipal (2014–2024)
+        </p>
+        <p style="font-size: 0.95rem; margin-bottom: 28px;">
+          <strong>Autores:</strong> Pedro Braga e Felipe (com colaboração de Mateus Cavalcanti nos Marcos 1 e 2) &nbsp;·&nbsp;
+          <strong>Docente:</strong> Prof. João Rulff
+        </p>
 
         <div class="grid-3">
           <div class="card">
             <div class="card-title">Hipótese 1: Trajetória média</div>
-            <p style="font-size: 0.92rem;">As taxas municipais médias de 2024 são menores que as de 2014 nas duas categorias?</p>
+            <p style="font-size: 0.9rem;">As taxas municipais médias de 2024 são menores que as de 2014 em ambas as categorias?</p>
           </div>
           <div class="card">
             <div class="card-title">Hipótese 2: Heterogeneidade</div>
-            <p style="font-size: 0.92rem;">A mudança foi semelhante em todas as regiões ou revelou disparidades e exceções municipais?</p>
+            <p style="font-size: 0.9rem;">A queda foi compartilhada de forma homogênea entre regiões e municípios fluminenses?</p>
           </div>
           <div class="card">
             <div class="card-title">Hipótese 3: Sazonalidade</div>
-            <p style="font-size: 0.92rem;">Existem variações estacionais recorrentes entre os meses ao longo do ano após ajuste pelo calendário?</p>
+            <p style="font-size: 0.9rem;">Existem ciclos intra-anuais consistentes e comuns a todo o território estadual?</p>
           </div>
         </div>
       </div>
       <div class="speaker-notes">
-        <strong>Fala sugerida (0:00–1:15):</strong> Contextualizar o perigo de conclusões puramente agregadas que ocultam desigualdades espaciais. Apresentar o período de 11 anos e as três hipóteses orientadoras.
+        <strong>Fala sugerida (0:00–1:15):</strong> Contextualizar o perigo de conclusões puramente agregadas que ocultam desigualdades espaciais. Apresentar o período de 11 anos e as três hipóteses orientadoras da investigação.
       </div>
     </div>
 
-    <!-- SLIDE 2 -->
-    <div class="slide" data-timing="1:15 – 2:30">
+    <!-- SLIDE 2: Dados e Metodologia -->
+    <div class="slide" data-timing="1:15–2:30">
       <h2>Dados, Origem e Decisões Metodológicas</h2>
-      <div class="grid-2">
-        <div>
-          <h3>Fonte e Auditoria</h3>
-          <ul>
-            <li><strong>Base:</strong> Instituto de Segurança Pública (ISP-RJ).</li>
-            <li><strong>Cobertura:</strong> 132 meses contínuos (janeiro/2014 a dezembro/2024).</li>
-            <li><strong>Integridade:</strong> Hashes SHA-256 verificados no notebook (<code>data/fontes.json</code>).</li>
-          </ul>
-
-          <h3>Critérios Analíticos</h3>
-          <ul>
-            <li><strong>Denominadores distintos:</strong> Roubo de rua por 100 mil hab.; roubo de veículo por 100 mil veículos (frota). Comparamos trajetórias, nunca níveis absolutos entre si.</li>
-            <li><strong>Painel Balanceado de 82 Municípios:</strong> 10 municípios tinham 40 meses consecutivos zerados no início da série (subnotificação). Excluímos da série principal para evitar aumento espúrio posterior.</li>
-            <li><strong>Média Não Ponderada:</strong> Peso unitário por município, retratando o município típico fluminense sem que a Capital domine a média.</li>
-          </ul>
+      <div class="grid-3" style="flex: 1; align-items: stretch;">
+        <div class="card">
+          <div class="card-title">Fonte e Auditoria</div>
+          <p style="font-size: 0.92rem; margin-bottom: 10px;">
+            <strong>Base:</strong> Instituto de Segurança Pública (ISP-RJ).<br>
+            <strong>Cobertura:</strong> 132 meses contínuos (janeiro/2014 a dezembro/2024).<br>
+            <strong>Integridade:</strong> Hashes SHA-256 verificados no notebook (<a href="data/fontes.json" style="color: var(--primary);">data/fontes.json</a>).
+          </p>
+          <p style="font-size: 0.92rem;">
+            Total auditado: 12.144 registros mensais municipais sem dados ausentes nas variáveis analisadas.
+          </p>
         </div>
-        <div>
-          <div class="card" style="text-align: center; margin-bottom: 16px;">
-            <div class="stat-number">82</div>
-            <div class="stat-desc">Municípios no painel balanceado (10.824 observações mensais)</div>
-          </div>
-          <div class="card" style="text-align: center;">
-            <div class="stat-number">132</div>
-            <div class="stat-desc">Meses analisados em cada município</div>
-          </div>
+        <div class="card">
+          <div class="card-title">Critérios Analíticos</div>
+          <p style="font-size: 0.92rem; margin-bottom: 10px;">
+            <strong>Denominadores distintos:</strong><br>
+            • Roubo de rua por 100 mil hab. (população IBGE/TCU).<br>
+            • Roubo de veículo por 100 mil veículos (frota Senatran).
+          </p>
+          <p style="font-size: 0.92rem;">
+            Comparamos trajetórias e variações relativas, nunca níveis brutos entre as categorias.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-title">O Painel de 82 Municípios</div>
+          <p style="font-size: 0.92rem; margin-bottom: 10px;">
+            <strong>Exclusão técnica:</strong> 10 municípios que apresentavam registro de ocorrências zerado entre 2014 e 2017 (início de DPs locais).
+          </p>
+          <p style="font-size: 0.92rem;">
+            Painel balanceado de 82 cidades (89,1% dos municípios e >98% da população). A sensibilidade do corte é testada para 92 cidades (2018–2024).
+          </p>
         </div>
       </div>
       <div class="speaker-notes">
-        <strong>Fala sugerida (1:15–2:30):</strong> Explicar a separação das unidades (habitantes vs frota) e justificar o painel de 82 municípios pela ausência inicial de dados em dez cidades.
+        <strong>Fala sugerida (1:15–2:30):</strong> Explicar a separação das unidades (habitantes vs frota) e justificar o painel de 82 municípios pela ausência inicial de registros em dez cidades, evitando viés artificial de alta.
       </div>
     </div>
 
-    <!-- SLIDE 3 -->
-    <div class="slide" data-timing="2:30 – 3:45">
+    <!-- SLIDE 3: Pergunta 1 -->
+    <div class="slide" data-timing="2:30–3:30">
       <h2>Pergunta 1: Como Evoluíram as Taxas Médias no Estado?</h2>
       <div class="grid-2">
         <div>
-          <img src="figuras/01_trajetorias.png" class="slide-img" alt="Trajetórias Médias">
+          <img src="figuras/01_trajetorias.png" alt="Figura 01: Trajetórias das taxas médias municipais" class="slide-img">
         </div>
         <div>
-          <h3>Médias Municipais do Painel (2014–2024)</h3>
-          <ul>
-            <li><strong>Roubo de Rua:</strong> Média cai de <strong>13,99</strong> para <strong>6,15</strong> por 100 mil hab. (<span style="color:var(--accent); font-weight:bold;">−56,0%</span>).</li>
-            <li><strong>Roubo de Veículo:</strong> Média cai de <strong>20,78</strong> para <strong>8,80</strong> por 100 mil veículos (<span style="color:var(--accent); font-weight:bold;">−57,7%</span>).</li>
-          </ul>
-
-          <h3>Trajetória com Elevação Intermediária</h3>
-          <ul>
-            <li><strong>Ciclo de alta e baixa:</strong> A queda não foi linear. Houve picos em 2016 (20,89 em rua) e em 2017 (28,07 em veículos).</li>
-            <li><strong>Recuo posterior:</strong> Reduções mais acentuadas ocorrem a partir de 2020.</li>
-            <li><strong>Hipótese 1:</strong> <span style="color:var(--accent); font-weight:bold;">Compatível com os dados</span> do painel na comparação de ponta a ponta.</li>
-          </ul>
+          <div class="card" style="margin-bottom: 14px;">
+            <div class="card-title">Médias Municipais do Painel (2014 → 2024)</div>
+            <p><strong>Roubo de Rua:</strong> cai de 13,99 para 6,15 por 100 mil hab. (<span class="badge-blue">−56,0%</span>).</p>
+            <p><strong>Roubo de Veículo:</strong> cai de 20,78 para 8,80 por 100 mil veíc. (<span class="badge-blue">−57,7%</span>).</p>
+          </div>
+          <div class="card" style="margin-bottom: 14px;">
+            <div class="card-title">Trajetória Não Linear (Onda)</div>
+            <p>• Picos em 2016 (20,89 em rua) e 2017 (28,07 em veículos) durante a crise fiscal estadual.</p>
+            <p>• Queda acentuada a partir de 2020 (pandemia) e consolidação em patamar baixo.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Comparação por Triênios Suavizados</div>
+            <p>• <strong>2014–16 vs. 2022–24:</strong> queda de 17,99 para 7,83 (<span class="badge-blue">−56,5%</span>) em rua e de 24,01 para 9,68 (<span class="badge-blue">−59,7%</span>) em veículos. Corrobora a Hipótese 1.</p>
+          </div>
         </div>
       </div>
       <div class="speaker-notes">
-        <strong>Fala sugerida (2:30–3:45):</strong> Apresentar a queda líquida superior a 55% nas médias municipais, destacando o pico em 2016-2017 e a aceleração da queda a partir de 2020.
+        <strong>Fala sugerida (2:30–3:30):</strong> Apresentar a queda líquida superior a 55% nas médias municipais, destacando o pico intermediário de 2016-2017 e a validação do recuo por médias trienais.
       </div>
     </div>
 
-    <!-- SLIDE 4 -->
-    <div class="slide" data-timing="3:45 – 4:30">
+    <!-- SLIDE 4: Pergunta 2 -->
+    <div class="slide" data-timing="3:30–4:30">
       <h2>Pergunta 2: Trajetórias Regionais das Taxas Médias</h2>
       <div class="grid-2">
         <div>
-          <img src="figuras/02_regioes.png" class="slide-img" alt="Trajetórias Regionais">
+          <img src="figuras/02_regioes.png" alt="Figura 02: Trajetórias regionais das taxas médias municipais" class="slide-img">
         </div>
         <div>
-          <h3>Comportamento por Macrorregião</h3>
-          <ul>
-            <li><strong>Roubo de Veículos — Dinâmicas Opostas:</strong>
-              <ul>
-                <li>Capital terminou 2024 em 41,96, patamar ligeiramente acima de 2014 (40,71; <span style="color:var(--danger); font-weight:bold;">+3,1%</span>).</li>
-                <li>Na série histórica, 2014 foi o menor nível anterior a 2020 (5º menor dos 11 anos); a Capital atingiu 71,12 em 2017, caiu até 30,60 em 2023 e repicou 37,1% em 2024.</li>
-                <li>Baixada Fluminense: recuou de 72,30 para 39,24 (<span style="color:var(--accent); font-weight:bold;">−45,7%</span>).</li>
-                <li>Grande Niterói: recuou de 66,44 para 15,62 (<span style="color:var(--accent); font-weight:bold;">−76,5%</span>).</li>
-              </ul>
-            </li>
-            <li><strong>Roubo de Rua:</strong> Capital recuou de 63,08 para 45,87 (−27,3%), patamar ainda muito superior a Baixada (19,95), Grande Niterói (12,27) e Interior (1,71).</li>
-            <li><strong>Hipótese 2:</strong> Confirmada pela forte divergência territorial.</li>
-          </ul>
+          <div class="card" style="margin-bottom: 12px;">
+            <div class="card-title">Roubo de Veículos: A Singularidade da Capital</div>
+            <p>• <strong>Capital pontual:</strong> 40,71 (2014) → 41,96 (2024), saldo de <span class="badge-orange">+3,1%</span>.</p>
+            <p>• <strong>Por triênios:</strong> caiu de 46,26 para 36,03 (<span class="badge-blue">−22,1%</span>). A aparente alta pontual decorre do repique de 2024 (+37,1% sobre os 30,60 de 2023), e não de tendência decenal de elevação.</p>
+          </div>
+          <div class="card" style="margin-bottom: 12px;">
+            <div class="card-title">Recuos Acentuados na Periferia Metropolitana</div>
+            <p>• <strong>Baixada Fluminense:</strong> caiu de 71,96 para 25,05 (<span class="badge-blue">−65,2%</span>).</p>
+            <p>• <strong>Grande Niterói:</strong> caiu de 57,69 para 23,04 (<span class="badge-blue">−60,1%</span>).</p>
+            <p>• <strong>Interior:</strong> caiu de 8,06 para 1,89 (<span class="badge-blue">−76,6%</span>).</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Roubo de Rua: Persistência na Baixada</div>
+            <p>Em 2024, a Baixada Fluminense manteve a maior taxa média (23,18), superando Capital (19,41), Grande Niterói (15,36) e Interior (2,73).</p>
+          </div>
         </div>
       </div>
       <div class="speaker-notes">
-        <strong>Fala sugerida (3:45–4:30):</strong> Mostrar que a queda estadual não foi uniforme: a Capital terminou com roubo de veículos acima de 2014, com repique recente entre 2023 e 2024.
+        <strong>Fala sugerida (3:30–4:30):</strong> Mostrar a assimetria metropolitana: na ponta da década a Capital teve leve alta em veículos por causa do repique de 2024, enquanto a Baixada e Niterói despencaram mais de 60%.
       </div>
     </div>
 
-    <!-- SLIDE 5 -->
-    <div class="slide" data-timing="4:30 – 5:15">
+    <!-- SLIDE 5: Pergunta 3 -->
+    <div class="slide" data-timing="4:30–5:30">
       <h2>Pergunta 3: Maiores Diferenças Absolutas por Município</h2>
       <div class="grid-2">
-        <div>
-          <img src="figuras/03_mudancas_municipais.png" class="slide-img" alt="Mudanças Municipais">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <img src="figuras/03_mudancas_municipais.png" alt="Figura 03: Mudanças municipais" style="width: 100%; max-height: 225px; object-fit: contain; border-radius: 6px; border: 1px solid var(--border); background: #fff;">
+          <img src="figuras/10_mapa_municipal.png" alt="Figura 10: Mapa municipal de triênios" style="width: 100%; max-height: 225px; object-fit: contain; border-radius: 6px; border: 1px solid var(--border); background: #fff;">
         </div>
         <div>
-          <h3>Casos em Destaque no Painel</h3>
-          <ul>
-            <li><strong>Balanço nos 82 municípios:</strong>
-              <ul>
-                <li>Roubo de rua: 65 quedas, 12 aumentos e 5 estáveis (zero).</li>
-                <li>Roubo de veículo: 65 quedas, 7 aumentos e 10 estáveis (zero).</li>
-                <li><span style="color:var(--accent); font-weight:bold;">Queda simultânea:</span> 56 municípios reduziram taxas em ambas as categorias.</li>
-              </ul>
-            </li>
-            <li><strong>Belford Roxo (Veículos):</strong> Taxa média mensal subiu <strong>+17,45 pontos</strong> (de 95,78 para 113,22). Na série histórica, alcançou 206,55 em 2018; 2024 é maior que 2014, mas representa recuo frente ao pico.</li>
-            <li><strong>Quedas Metropolitanas:</strong> Nilópolis na Baixada (−94,76 pontos) e São Gonçalo em Grande Niterói (−92,40 pontos).</li>
-            <li><strong>Municípios Menores:</strong> Aumentos em roubo de rua (Três Rios +1,34, Cardoso Moreira +1,30 e Pinheiral +0,91) decorrem de poucas ocorrências nominais em populações reduzidas.</li>
-          </ul>
+          <div class="card" style="margin-bottom: 12px;">
+            <div class="card-title">Balanço Territorial nos 82 Municípios</div>
+            <p>• <strong>Roubo de rua:</strong> 65 quedas pontuais (78 no triênio); 12 aumentos; 5 estáveis.</p>
+            <p>• <strong>Roubo de veículo:</strong> 65 quedas pontuais (69 no triênio); 7 aumentos; 10 estáveis.</p>
+            <p>• <strong>Queda simultânea em ambos:</strong> 56 cidades no ponto a ponto.</p>
+          </div>
+          <div class="card" style="margin-bottom: 12px;">
+            <div class="card-title">A Exceção de Belford Roxo (Veículos)</div>
+            <p>• Taxa média subiu de 95,78 para 113,22 (<span class="badge-orange">+17,45 pts</span> pontual) e de 88,68 para 94,09 (<span class="badge-orange">+5,41 pts</span> no triênio).</p>
+            <p>• Na série histórica completa, o pico foi em 2017 (178,74); 2024 recuou frente ao ápice, mas ainda encerrou acima de 2014.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Vizinhos com Quedas Expressivas</div>
+            <p>Em contraste, vizinhos metropolitanos registraram forte alívio: Nilópolis (<span class="badge-blue">−93,98 pts</span>) e São Gonçalo (<span class="badge-blue">−74,68 pts</span>).</p>
+          </div>
         </div>
       </div>
       <div class="speaker-notes">
-        <strong>Fala sugerida (4:30–5:15):</strong> Destacar que 65 municípios reduziram taxas em cada crime, mas Belford Roxo encerrou acima de 2014, enquanto vizinhos como Nilópolis tiveram quedas superiores a 90 pontos.
+        <strong>Fala sugerida (4:30–5:30):</strong> Apresentar o mapa coroplético evidenciando a predominância de quedas (azul), destacando a divergência intrametropolitana entre a alta de Belford Roxo e o alívio expressivo de Nilópolis e São Gonçalo.
       </div>
     </div>
 
-    <!-- SLIDE 6 -->
-    <div class="slide" data-timing="5:15 – 6:00">
+    <!-- SLIDE 6: Pergunta 4 -->
+    <div class="slide" data-timing="5:30–6:30">
       <h2>Pergunta 4: A Distância entre os Municípios Diminuiu?</h2>
       <div class="grid-2">
         <div>
-          <img src="figuras/04_dispersao.png" class="slide-img" alt="Dispersão">
+          <img src="figuras/04_dispersao.png" alt="Figura 04: Dispersão e desigualdade relativa" class="slide-img">
         </div>
         <div>
-          <h3>Dispersão Absoluta vs. Relativa</h3>
-          <ul>
-            <li><strong>Dispersão Absoluta (P90 − P10):</strong>
-              <ul>
-                <li>Roubo de rua: P90 caiu de 41,12 para 18,43 (<span style="color:var(--accent); font-weight:bold;">−55,2%</span>).</li>
-                <li>Roubo de veículo: P90 caiu de 58,84 para 20,43 (<span style="color:var(--accent); font-weight:bold;">−65,3%</span>).</li>
-                <li><em>Ressalva:</em> O P10 é zero na maioria dos anos; o estreitamento reflete o rebaixamento do P90.</li>
-              </ul>
-            </li>
-            <li><strong>Dispersão Relativa (Coeficiente de Variação):</strong>
-              <ul>
-                <li>Roubo de rua: CV subiu de <strong>1,65</strong> para <strong>1,86</strong> (+12,8%).</li>
-                <li>Roubo de veículo: CV subiu de <strong>1,61</strong> para <strong>2,27</strong> (+41,1%).</li>
-              </ul>
-            </li>
-            <li><strong>Conclusão:</strong> A distância absoluta encolheu pelo rebaixamento dos níveis, mas a desigualdade relativa intermunicipal aumentou.</li>
-          </ul>
+          <div class="card" style="margin-bottom: 12px;">
+            <div class="card-title">Dispersão Absoluta (P90 − P10) Estreitou</div>
+            <p>• <strong>Roubo de rua:</strong> P90 caiu de 41,12 para 18,43 (<span class="badge-blue">−55,2%</span>).</p>
+            <p>• <strong>Roubo de veículo:</strong> P90 caiu de 58,84 para 20,43 (<span class="badge-blue">−65,3%</span>).</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Ressalva: como P10 é frequentemente nulo, o estreitamento decorre do rebaixamento do teto (P90).</p>
+          </div>
+          <div class="card" style="margin-bottom: 12px;">
+            <div class="card-title">Desigualdade Relativa (CV e Gini) Aumentou</div>
+            <p>• <strong>CV Estadual:</strong> rua subiu de 1,65 para 2,12 (<span class="badge-orange">+28,8%</span>); veículos subiu de 1,81 para 3,11 (<span class="badge-orange">+71,5%</span>).</p>
+            <p>• <strong>CV Metropolitano (ISP):</strong> veículos subiu de 0,63 para 0,91 (<span class="badge-orange">+44,1%</span>).</p>
+            <p>• <strong>Índice de Gini:</strong> rua subiu de 0,72 para 0,75; veículos subiu de 0,70 para 0,80.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Concentração nos 8 Maiores Municípios</div>
+            <p>As 8 maiores cidades (10% dos municípios) concentram <strong>59,9%</strong> dos roubos de rua (era 52,9%) e <strong>69,4%</strong> dos de veículos (era 51,7%).</p>
+          </div>
         </div>
       </div>
       <div class="speaker-notes">
-        <strong>Fala sugerida (5:15–6:00):</strong> Explicar a dualidade crucial: a distância absoluta diminuiu porque o patamar geral recuou, mas o coeficiente de variação mostra que a desigualdade relativa aumentou.
+        <strong>Fala sugerida (5:30–6:30):</strong> Explicar a dualidade crucial: a distância absoluta diminuiu porque o patamar geral recuou, mas o coeficiente de variação e o Gini comprovam que a desigualdade relativa aumentou.
       </div>
     </div>
 
-    <!-- SLIDE 7 -->
-    <div class="slide" data-timing="6:00 – 6:45">
+    <!-- SLIDE 7: Pergunta 5 -->
+    <div class="slide" data-timing="6:30–7:30">
       <h2>Pergunta 5: A Participação dos Celulares nos Roubos de Rua</h2>
       <div class="grid-2">
         <div>
-          <img src="figuras/07_decomposicao_rua.png" class="slide-img" alt="Decomposição dos Roubos de Rua">
+          <img src="figuras/07_decomposicao_rua.png" alt="Figura 07: Decomposição dos roubos de rua" class="slide-img">
         </div>
         <div>
-          <h3>Composição dos Roubos de Rua</h3>
-          <ul>
-            <li><strong>Fatia dos Celulares:</strong> Passou de <strong>8,1% (2014)</strong> para <strong>36,6% (2024)</strong> dos roubos de rua (+28,5 p.p.).</li>
-            <li><strong>Contagens Anuais no Painel:</strong>
-              <ul>
-                <li>Roubo a transeunte: caiu de 80.461 para 30.868 (<span style="color:var(--accent); font-weight:bold;">−61,6%</span>).</li>
-                <li>Roubo em coletivo: recuou de 7.314 para 6.235 (<span style="color:var(--accent); font-weight:bold;">−14,8%</span>).</li>
-                <li>Roubo de celular: saltou de 7.758 para 21.416 (<span style="color:var(--danger); font-weight:bold;">+176,1%</span>), tendo alcançado 26.779 em 2019.</li>
-              </ul>
-            </li>
-            <li><strong>Hipóteses Interpretativas:</strong>
-              <p style="font-size: 0.95rem; margin-top: 6px;">1. <strong>Oportunidade e valor (Cohen & Felson, 1979):</strong> smartphones como alvos atrativos, portáteis e de alto valor de troca.</p>
-              <p style="font-size: 0.95rem;">2. <strong>Aprimoramento cadastral:</strong> delegacias passaram a tipificar celular expressamente em vez de transeunte genérico (a maior parte da expansão ocorreu entre 2014 e 2019, antes do PIX).</p>
-            </li>
-          </ul>
+          <div class="card" style="margin-bottom: 12px;">
+            <div class="card-title">Mudança na Estrutura dos Roubos de Rua</div>
+            <p>• <strong>Celular:</strong> fatia salta de <strong>8,1%</strong> (2014) para <strong>36,6%</strong> (2024), avanço de <span class="badge-orange">+28,5 p.p.</span></p>
+            <p>• <strong>Contagens absolutas anuais:</strong></p>
+            <p style="margin-left: 10px; font-size: 0.9rem;">
+              - Celular: subiu de 7.758 para 21.416 (<span class="badge-orange">+176,1%</span>; pico de 38.324 em 2018).<br>
+              - Transeunte: recuou de 80.461 para 30.868 (<span class="badge-blue">−61,6%</span>).<br>
+              - Coletivo: recuou de 7.314 para 6.235 (<span class="badge-blue">−14,8%</span>).
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-title">Hipóteses Explicativas Concorrentes</div>
+            <p>• <strong>Valor do bem e liquidez (PIX):</strong> smartphones ganharam valor e acesso a bancos. O PIX (nov/2020) ampliou a liquidez, mas os volumes já cresciam fortemente entre 2014 e 2018 antes do PIX; a fatia percentual avançou de forma contínua em todo o período.</p>
+            <p style="margin-top: 6px;">• <strong>Tipificação policial:</strong> maior detalhamento do registro em delegacias, migrando casos genéricos de transeunte para a rubrica específica de celular.</p>
+          </div>
         </div>
       </div>
       <div class="speaker-notes">
-        <strong>Fala sugerida (6:00–6:45):</strong> Apresentar o salto de participação do celular e contrastar as duas hipóteses: valorização do aparelho nas ruas versus aprimoramento no registro das delegacias.
+        <strong>Fala sugerida (6:30–7:30):</strong> Apresentar a substituição relativa dentro do roubo de rua. Qualificar o papel do PIX (reforço posterior a uma tendência já iniciada em 2014) e da prática cartorária das delegacias.
       </div>
     </div>
 
-    <!-- SLIDE 8 -->
-    <div class="slide" data-timing="6:45 – 7:30">
+    <!-- SLIDE 8: Pergunta 6 - Perfis -->
+    <div class="slide" data-timing="7:30–8:15">
       <h2>Pergunta 6: Perfis Mensais Médios e Efeito Regional</h2>
       <div class="grid-2">
         <div>
-          <img src="figuras/06_perfil_mensal.png" class="slide-img" alt="Perfil Mensal">
+          <img src="figuras/06_perfil_mensal.png" alt="Figura 06: Perfis mensais médios" class="slide-img">
         </div>
         <div>
-          <h3>Normalização e Índices Diários</h3>
-          <ul>
-            <li>Taxas divididas pelos dias do mês; média anual local indexada em 100.</li>
-            <li><strong>Picos Médios no Calendário:</strong>
-              <ul>
-                <li>Roubo de veículos: maior índice médio em <strong>janeiro (123,9 no painel; 118,2 na Metropolitana)</strong>; vales regulares no inverno (80,1 no painel; 88,1 em julho na Metropolitana).</li>
-                <li>Roubo de rua: maior índice médio em <strong>fevereiro (115,5 no painel)</strong>, mas na Região Metropolitana o perfil varia estreitamente entre 92,9 e 104,2 ao longo do ano.</li>
-              </ul>
-            </li>
-            <li><strong>Efeito Regional (Metropolitana vs. Interior):</strong>
-              <ul>
-                <li>O pico aparente de fevereiro na média de rua decorre exclusivamente do Interior (119,7), ligado ao turismo de verão e Carnaval.</li>
-                <li>Em veículos, o ciclo estacional é compartilhado por todo o território fluminense.</li>
-              </ul>
-            </li>
-            <li><strong>Sensibilidade sem 2020:</strong> A exclusão do choque da quarentena mantém o formato dos perfis inalterado.</li>
-          </ul>
+          <div class="card" style="margin-bottom: 12px;">
+            <div class="card-title">Padronização por Dias e Médias Indexadas</div>
+            <p>Taxas diárias (divididas pelos dias de cada mês); índice 100 = média anual de cada município.</p>
+          </div>
+          <div class="card" style="margin-bottom: 12px;">
+            <div class="card-title">Roubo de Veículos: Ciclo Consistente</div>
+            <p>• <strong>Pico no verão:</strong> janeiro atinge 123,9 no painel estadual e 118,2 no núcleo metropolitano.</p>
+            <p>• <strong>Vales no inverno:</strong> ponto mais baixo ocorre em julho (80,1 no painel e 88,6 na área metropolitana).</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Roubo de Rua: Divergência Espacial</div>
+            <p>• <strong>Painel estadual:</strong> pico em fevereiro (118,1).</p>
+            <p>• <strong>Núcleo metropolitano:</strong> fevereiro é de apenas 102,6; o perfil oscila discretamente entre 94,6 (outubro) e 103,9 (maio). O pico estadual reflete o Interior.</p>
+          </div>
         </div>
       </div>
       <div class="speaker-notes">
-        <strong>Fala sugerida (6:45–7:30):</strong> Mostrar a normalização diária e destacar que o pico de fevereiro em rua é um efeito dos municípios do Interior, enquanto em veículos há padrão metropolitano mais consistente.
+        <strong>Fala sugerida (7:30–8:15):</strong> Explicar a normalização por dias corridos e contrastar a regularidade sazonal de veículos com o comportamento disperso dos roubos de rua no espaço metropolitano.
       </div>
     </div>
 
-    <!-- SLIDE 9 -->
-    <div class="slide" data-timing="7:30 – 8:15">
+    <!-- SLIDE 9: Pergunta 6 - Friedman -->
+    <div class="slide" data-timing="8:15–9:00">
       <h2>Pergunta 6: Validação por Friedman e Perfis Regionais</h2>
       <div class="grid-2">
         <div>
-          <img src="figuras/09_sazonalidade_regional.png" class="slide-img" alt="Sazonalidade Regional">
+          <img src="figuras/09_sazonalidade_regional.png" alt="Figura 09: Perfis sazonais comparativos" class="slide-img">
         </div>
         <div>
-          <h3>Teste Estatístico em Blocos (Friedman)</h3>
-          <p style="font-size: 0.95rem; margin-bottom: 8px;">Por compartilharem a mesma média anual (100), os 12 meses de cada ano estão emparelhados em blocos (anos = blocos, meses = tratamentos):</p>
-          
-          <table>
-            <thead>
+          <div class="card" style="margin-bottom: 10px;">
+            <div class="card-title">Teste de Friedman por Agrupamento Regional</div>
+            <table style="font-size: 0.85rem;">
               <tr>
-                <th>Categoria</th>
-                <th>Amostra</th>
-                <th>Estatística Q</th>
+                <th>Região / Crime</th>
+                <th>Q (11 anos)</th>
                 <th>p-valor</th>
-                <th>Significância</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Roubo de rua</strong></td>
-                <td>Todos os anos (11 anos)</td>
-                <td>21,78</td>
-                <td>0,0261</td>
-                <td><span style="color:var(--accent);">p &lt; 0,05</span></td>
+                <th>W Kendall</th>
               </tr>
               <tr>
-                <td><strong>Roubo de rua</strong></td>
-                <td>Sem 2020 (10 anos)</td>
-                <td>20,58</td>
-                <td>0,0379</td>
-                <td><span style="color:var(--accent);">p &lt; 0,05</span></td>
+                <td><strong>Rua · Metropolitano (ISP)</strong></td>
+                <td>11,71</td>
+                <td><strong>0,3856</strong></td>
+                <td>0,10 (Plano)</td>
               </tr>
               <tr>
-                <td><strong>Roubo de veículo</strong></td>
-                <td>Todos os anos (11 anos)</td>
-                <td>35,74</td>
-                <td>0,00019</td>
-                <td><span style="color:var(--accent);">p &lt; 0,001</span></td>
+                <td>Rua · Interior</td>
+                <td>20,97</td>
+                <td>0,0337</td>
+                <td>0,17 (Fev: 122,4)</td>
               </tr>
               <tr>
-                <td><strong>Roubo de veículo</strong></td>
-                <td>Sem 2020 (10 anos)</td>
-                <td>30,05</td>
-                <td>0,00156</td>
-                <td><span style="color:var(--accent);">p &lt; 0,01</span></td>
+                <td><strong>Veic · Metropolitano (ISP)</strong></td>
+                <td>27,81</td>
+                <td><strong>0,0035</strong></td>
+                <td>0,23 (Verão/Inv)</td>
               </tr>
-            </tbody>
-          </table>
-
-          <div class="card" style="margin-top: 14px;">
-            <p style="font-size: 0.92rem;"><strong>Avaliação Crítica:</strong> Ambas as séries mantêm significância a 5% com e sem 2020. Porém, em veículos o ciclo é autêntico e compartilhado; em rua, o gráfico regional comprova que a curva metropolitana é plana (92,9 a 104,2) e o pico de verão vem do Interior. Ano a ano, agosto foi o mês mais alto em 3 anos, e fevereiro em apenas 2 anos.</p>
+              <tr>
+                <td>Veic · Interior</td>
+                <td>30,48</td>
+                <td>0,0013</td>
+                <td>0,25 (Verão/Inv)</td>
+              </tr>
+            </table>
+          </div>
+          <div class="card">
+            <div class="card-title">Falácia Ecológica Testada</div>
+            <p style="font-size: 0.88rem;">• Em <strong>contagens estaduais agregadas</strong>, a sazonalidade de rua desaparece estatisticamente (p = 0,135), enquanto veículos permanece significante (p = 0,016).</p>
+            <p style="font-size: 0.88rem; margin-top: 4px;">• A aparente sazonalidade de rua decorre do Interior (turismo e Carnaval), não se aplicando à metrópole.</p>
           </div>
         </div>
       </div>
       <div class="speaker-notes">
-        <strong>Fala sugerida (7:30–8:15):</strong> Explicar que o teste de Friedman rejeita a hipótese nula em ambos os crimes mesmo sem 2020, mas o gráfico regional comprova que a sazonalidade de roubo de rua é um artefato do Interior, com perfil metropolitano plano.
+        <strong>Fala sugerida (8:15–9:00):</strong> Apresentar a comprovação estatística: roubo de rua NÃO tem sazonalidade significante na metrópole (p = 0,386). O pico estadual de fevereiro é um artefato de agregação do Interior turístico.
       </div>
     </div>
 
-    <!-- SLIDE 10 -->
-    <div class="slide" data-timing="8:15 – 9:00">
+    <!-- SLIDE 10: Sensibilidade -->
+    <div class="slide" data-timing="9:00–9:30">
       <h2>Sensibilidade: 82 vs. 92 Municípios (2018–2024)</h2>
-      <div style="flex: 1;">
-        <h3>Verificação no Período com Registros Completos</h3>
-        <p style="margin-bottom: 16px;">Para avaliar se a exclusão dos 10 municípios iniciais gerou distorção, recalculamos as taxas no intervalo em que todos os municípios fluminenses contavam com registros válidos:</p>
-        
-        <table>
-          <thead>
-            <tr>
-              <th>Painel</th>
-              <th>Categoria</th>
-              <th>Média 2018</th>
-              <th>Média 2024</th>
-              <th>Variação (%)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>82 municípios</td>
-              <td>Roubo de rua</td>
-              <td>20,20</td>
-              <td>6,15</td>
-              <td><strong>−69,6%</strong></td>
-            </tr>
-            <tr>
-              <td>92 municípios</td>
-              <td>Roubo de rua</td>
-              <td>18,14</td>
-              <td>5,49</td>
-              <td><strong>−69,7%</strong></td>
-            </tr>
-            <tr>
-              <td>82 municípios</td>
-              <td>Roubo de veículos</td>
-              <td>24,67</td>
-              <td>8,80</td>
-              <td><strong>−64,3%</strong></td>
-            </tr>
-            <tr>
-              <td>92 municípios</td>
-              <td>Roubo de veículos</td>
-              <td>22,27</td>
-              <td>7,91</td>
-              <td><strong>−64,5%</strong></td>
-            </tr>
-          </tbody>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+        <p style="margin-bottom: 16px;">
+          Para avaliar se a exclusão técnica dos 10 municípios com registros iniciais zerados distorceu os resultados, recalculamos as variações para o intervalo em que <strong>todos os 92 municípios</strong> possuíam dados completos:
+        </p>
+        <table style="margin-bottom: 20px;">
+          <tr>
+            <th>Painel Analisado</th>
+            <th>Categoria</th>
+            <th>Média 2018</th>
+            <th>Média 2024</th>
+            <th>Variação (%)</th>
+          </tr>
+          <tr>
+            <td><strong>82 municípios (Painel adotado)</strong></td>
+            <td>Roubo de rua</td>
+            <td>20,20</td>
+            <td>6,15</td>
+            <td><span class="badge-blue">−69,6%</span></td>
+          </tr>
+          <tr>
+            <td><strong>92 municípios (Totalidade do RJ)</strong></td>
+            <td>Roubo de rua</td>
+            <td>18,10</td>
+            <td>5,49</td>
+            <td><span class="badge-blue">−69,7%</span></td>
+          </tr>
+          <tr>
+            <td><strong>82 municípios (Painel adotado)</strong></td>
+            <td>Roubo de veículo</td>
+            <td>24,63</td>
+            <td>8,80</td>
+            <td><span class="badge-blue">−64,3%</span></td>
+          </tr>
+          <tr>
+            <td><strong>92 municípios (Totalidade do RJ)</strong></td>
+            <td>Roubo de veículo</td>
+            <td>22,07</td>
+            <td>7,84</td>
+            <td><span class="badge-blue">−64,5%</span></td>
+          </tr>
         </table>
-
-        <div class="card" style="margin-top: 24px;">
-          <div class="card-title">Conclusão de Sensibilidade</div>
-          <p>A direção e a magnitude das variações são muito próximas nos dois recortes (−69,6% vs. −69,7% em rua; −64,3% vs. −64,5% em veículos). A exclusão preventiva protegeu a análise da década sem distorcer a tendência agregada observada.</p>
+        <div class="card">
+          <div class="card-title">Conclusão Metodológica</div>
+          <p>As variações percentuais diferem por menos de 0,2 p.p. A exclusão técnica preservou a comparabilidade temporal de 11 anos sem distorcer as conclusões substantivas do estudo.</p>
         </div>
       </div>
       <div class="speaker-notes">
-        <strong>Fala sugerida (8:15–9:00):</strong> Apresentar a sensibilidade: mesmo incluindo os 10 municípios a partir de 2018, as taxas caem em proporções muito próximas (−69,6% vs −69,7% e −64,3% vs −64,5%).
+        <strong>Fala sugerida (9:00–9:30):</strong> Apresentar o teste de sensibilidade em 30 segundos: a variação nos 92 municípios é idêntica à dos 82 municípios (−69,6% vs −69,7% e −64,3% vs −64,5%), validando o desenho do painel.
       </div>
     </div>
 
-    <!-- SLIDE 11 -->
-    <div class="slide" data-timing="9:00 – 10:00">
+    <!-- SLIDE 11: Conclusões e Limitações -->
+    <div class="slide" data-timing="9:30–10:00">
       <h2>Síntese das Respostas às Hipóteses e Limitações</h2>
-      <div class="grid-2">
-        <div>
-          <h3>Respostas às Hipóteses</h3>
-          <ol style="margin-left: 20px; line-height: 1.8;">
-            <li><strong>Hipótese 1 (Média municipal menor):</strong> Confirmada pelos dados (−56,0% em rua e −57,7% em veículos), com picos em 2016-2017.</li>
-            <li><strong>Hipótese 2 (Heterogeneidade):</strong> Confirmada pelos dados. Capital subiu em veículos (+3,1%), Belford Roxo subiu +17,45 pts, 56 de 82 cidades caíram em ambas e a desigualdade relativa (CV) aumentou.</li>
-            <li><strong>Hipótese 3 (Sazonalidade):</strong> Confirmada com ressalvas. Consistente em veículos; heterogênea e dominada pelo Interior em roubos de rua.</li>
-          </ol>
-
-          <h3 style="margin-top: 14px;">Composição de Rua</h3>
-          <p>Celular subiu de 8,1% para 36,6% das contagens (+176,1%), sugerindo duas hipóteses: atratividade do aparelho (Cohen & Felson, 1979) e evolução nas práticas de registro policial.</p>
+      <div class="grid-2" style="flex: 1; align-items: stretch;">
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="card-title">Respostas às Hipóteses</div>
+            <p style="font-size: 0.9rem; margin-bottom: 8px;">
+              <strong>H1 (Média municipal menor):</strong> <span class="badge-blue">Corroborada</span>. Queda superior a 55% nas duas categorias (−56,0% rua, −57,7% veículos; −56,5% e −59,7% nos triênios), com picos em 2016-2017.
+            </p>
+            <p style="font-size: 0.9rem; margin-bottom: 8px;">
+              <strong>H2 (Heterogeneidade):</strong> <span class="badge-blue">Corroborada</span>. A Capital subiu no ponto a ponto de veículos (+3,1%), mas caiu no triênio (−22,1%). Belford Roxo subiu (+17,45 pts). A desigualdade relativa (CV e Gini) aumentou.
+            </p>
+            <p style="font-size: 0.9rem;">
+              <strong>H3 (Sazonalidade):</strong> <span class="badge-orange">Qualificada</span>. Roubo de veículos possui ciclo sistemático em todo o estado (W ≥ 0,23). Roubo de rua NÃO é sazonal na metrópole (p = 0,386).
+            </p>
+          </div>
+          <div style="background: rgba(88,166,255,0.08); padding: 8px 12px; border-radius: 6px; font-weight: 600; font-size: 0.92rem; color: var(--primary);">
+            Resposta à pergunta título: Não, a mudança não foi igual para todos.
+          </div>
         </div>
-        <div>
-          <h3>Limitações Metodológicas</h3>
-          <ul>
-            <li><strong>Registros de Ocorrência:</strong> Dados captam comunicações à polícia, não a totalidade dos crimes (cifra oculta e incentivos de queixa).</li>
-            <li><strong>Médias Não Ponderadas:</strong> Retratam o município típico, não o habitante médio do estado.</li>
-            <li><strong>Não Causalidade:</strong> Análise estritamente descritiva e exploratória; não realizamos inferência de políticas públicas.</li>
-          </ul>
 
-          <div class="card" style="margin-top: 20px; text-align: center; border-color: var(--primary);">
-            <p><strong>Repositório do Projeto:</strong></p>
-            <p><a href="https://github.com/mateusdcc/roubos-rj-aed" target="_blank" style="color:var(--primary); font-weight:bold; text-decoration:none;">github.com/mateusdcc/roubos-rj-aed</a></p>
-            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-muted);">Notebook, dados e documentação completa</p>
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="card-title">Limitações e Agenda Futura</div>
+            <ul style="font-size: 0.88rem; margin-left: 18px; margin-bottom: 8px;">
+              <li><strong>Subnotificação:</strong> dados baseados em registros em delegacias; propensão a notificar varia entre regiões e crimes.</li>
+              <li><strong>Cobertura histórica:</strong> exclusão técnica de 10 cidades antes de 2018 por ausência de registros policiais contínuos.</li>
+              <li><strong>Frota e exposição:</strong> ausência de série temporal de frota municipal mês a mês para o denominador de veículos.</li>
+              <li><strong>Delimitação regional:</strong> recorte administrativo do ISP versus região metropolitana institucional da Lei Compl. 184/2018.</li>
+            </ul>
+          </div>
+          <div style="font-size: 0.88rem; color: var(--text-muted); text-align: right;">
+            Obrigado! Aberto a perguntas da banca.
           </div>
         </div>
       </div>
       <div class="speaker-notes">
-        <strong>Fala sugerida (9:00–10:00):</strong> Concluir com a síntese das hipóteses e as limitações do trabalho, agradecendo a atenção do professor e dos colegas e abrindo para perguntas.
+        <strong>Fala sugerida (9:30–10:00):</strong> Fechar respondendo à pergunta título: a queda não foi homogênea. Pontuar as limitações de subnotificação e abrir para as perguntas da banca pontualmente aos 10 minutos.
       </div>
     </div>
 
-  </div>
+  </main>
 
   <footer>
-    <button class="nav-btn" id="prev-btn" onclick="prevSlide()">← Anterior</button>
-    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
-    <span style="font-size: 0.9rem; color: var(--text-muted);" id="slide-num">Slide 1 / 11</span>
-    <button class="nav-btn" id="next-btn" onclick="nextSlide()" style="margin-left: 16px;">Próximo →</button>
+    <button class="nav-btn" id="prev-btn" onclick="prevSlide()" disabled>← Anterior</button>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <span id="slide-num" style="font-size: 0.9rem; color: var(--text-muted);">Slide 1 / 11</span>
+      <button class="nav-btn" id="next-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
   </footer>
 
   <script>
@@ -629,7 +655,8 @@
       currentSlide = (index + totalSlides) % totalSlides;
       slides[currentSlide].classList.add('active');
 
-      timingBadge.textContent = slides[currentSlide].getAttribute('data-timing') || '';
+      const timing = slides[currentSlide].getAttribute('data-timing') || '';
+      timingBadge.textContent = timing ? `Tempo: ${timing}` : '';
       slideNum.textContent = `Slide ${currentSlide + 1} / ${totalSlides}`;
       progressFill.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
 

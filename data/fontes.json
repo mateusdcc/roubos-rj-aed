@@ -13,5 +13,10 @@
     "url": "https://www.ispdados.rj.gov.br/Arquivos/DicionarioDeVariaveisBaseMunic%C3%ADpioTaxaM%C3%AAs.xlsx",
     "acesso": "2026-10-07",
     "sha256": "24fe463e1426d8369448d42dbab8995515629d6461e308b842682fb77c1fe824"
+  },
+  "geojs-33-mun.json": {
+    "url": "https://raw.githubusercontent.com/tbrugz/geodata-br/master/geojson/geojs-33-mun.json",
+    "acesso": "2026-11-18",
+    "sha256": "1e01322ac6fa46764cc7f24a4f7224987d8bafa4d5ab8afe9aaf46b562f102ac"
   }
 }

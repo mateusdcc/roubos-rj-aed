@@ -1,147 +1,168 @@
-# Roteiro da Apresentação Final — Marco 3 (10 minutos)
-**Disciplina:** Análise Exploratória de Dados e Visualização — FGV EMAp (2026.2)  
-**Professor:** João Rulff  
-**Título do Projeto:** Roubos no Rio de Janeiro: uma mudança igual para todos?  
-**Integrantes (Marco 3):** Pedro Braga e Felipe  
-*(Projeto desenvolvido conjuntamente com Mateus Cavalcanti nos Marcos 1 e 2; finalizado e revisado por Pedro Braga e Felipe no Marco 3)*  
-**Base do Projeto:** `marco3.ipynb` e `marco3.html`  
+# Roteiro de Apresentação Oral — Marco 3 (Final)
+
+**Disciplina:** Análise Exploratória de Dados e Visualização (2026.2) — FGV EMAp  
+**Docente:** Prof. João Rulff  
+**Equipe:** Pedro Braga e Felipe (com colaboração de Mateus Cavalcanti nos Marcos 1 e 2)  
+**Tema:** *Roubos no Rio de Janeiro: uma mudança igual para todos?*  
+**Tempo limite estrito:** 10 minutos (600 segundos)  
+**Meta de ritmo oral:** ~120 palavras por minuto (~1.200 palavras de texto de fala).
 
 ---
 
-## Estrutura Temporal dos 10 Minutos
+## 1. Tabela Unificada de Tempos
 
-| Bloco | Tempo | Tema | Visualização / Slide |
-|---|---|---|---|
-| 1 | 0:00 – 1:15 | Abertura, Contexto e Hipóteses de Pesquisa | Slide 1: Título e Hipóteses |
-| 2 | 1:15 – 2:30 | Dados, Auditoria e Cautelas Metodológicas | Slide 2: Fontes e Painel dos 82 Municípios |
-| 3 | 2:30 – 3:45 | Trajetória Agregada e Hipótese 1 | Slide 3: `figuras/01_trajetorias.png` |
-| 4 | 3:45 – 5:15 | Disparidade Regional e Municipal (H2) | Slides 4 e 5: `02_regioes.png` e `03_mudancas_municipais.png` |
-| 5 | 5:15 – 6:30 | Dispersão (P90-P10 e CV) e Roubos de Celular | Slides 6 e 7: `04_dispersao.png`, `05_composicao.png` e `07_decomposicao_rua.png` |
-| 6 | 6:30 – 7:45 | Sazonalidade, Friedman e Perfis Regionais (H3) | Slides 8 e 9: `06_perfil_mensal.png`, `08_sazonalidade_heatmap.png` e `09_sazonalidade_regional.png` |
-| 7 | 7:45 – 8:45 | Análise de Sensibilidade (82 vs. 92 Municípios) | Slide 10: Comparação de 82 vs. 92 Municípios |
-| 8 | 8:45 – 10:00 | Conclusões Finais, Limitações e Fechamento | Slide 11: Síntese, Limites e Q&A |
-
----
-
-## Minuto a Minuto: O que Projetar, Falar e Defender
-
-### 0:00 – 1:15 | Bloco 1: Abertura e Motivação
-**Slide na Tela:** Slide 1 — Título, Equipe e as Três Hipóteses de Pesquisa.
-
-**Fala Sugerida:**
-> *"Bom dia, professor João, colegas. Nosso trabalho parte de uma questão central sobre dados de segurança pública: quando as estatísticas agregadas de roubo caem no Estado do Rio de Janeiro, será que essa redução se distribui de maneira uniforme entre os municípios?  
-> Indicadores globais podem esconder contrastes importantes. Uma média estadual em queda pode conviver com estabilidade ou até aumento de crimes em determinadas regiões, além de transformações na própria natureza das ocorrências.  
-> Para investigar essa questão, analisamos 11 anos de registros do Instituto de Segurança Pública (ISP-RJ), de 2014 a 2024. Estruturamos nossa análise em torno de três hipóteses:  
-> Primeira: as taxas médias municipais de 2024 são substancialmente menores que as de 2014.  
-> Segunda: essa mudança ocorreu de forma espacialmente desigual entre regiões e municípios.  
-> Terceira: existem padrões sazonais mensais consistentes ao longo do ano.  
-> Vamos aos dados e decisões metodológicas."*
+| Slide | Conteúdo | Intervalo | Duração | Alvo de Fala |
+| :---: | :--- | :---: | :---: | :---: |
+| **1** | Capa, Contexto e Hipóteses | 0:00 – 1:15 | 1m 15s | ~150 palavras |
+| **2** | Dados, Auditoria e Painel de 82 Municípios | 1:15 – 2:30 | 1m 15s | ~150 palavras |
+| **3** | Pergunta 1: Trajetórias das Médias Estaduais (H1) | 2:30 – 3:30 | 1m 00s | ~120 palavras |
+| **4** | Pergunta 2: Trajetórias Regionais das Taxas (H2) | 3:30 – 4:30 | 1m 00s | ~120 palavras |
+| **5** | Pergunta 3: Diferenças Municipais e Mapa Coroplético (H2) | 4:30 – 5:30 | 1m 00s | ~120 palavras |
+| **6** | Pergunta 4: Dispersão e Desigualdade Relativa (CV e Gini) | 5:30 – 6:30 | 1m 00s | ~120 palavras |
+| **7** | Pergunta 5: Decomposição dos Roubos de Rua | 6:30 – 7:30 | 1m 00s | ~120 palavras |
+| **8** | Pergunta 6: Perfis Mensais Normalizados (H3) | 7:30 – 8:15 | 0m 45s | ~90 palavras |
+| **9** | Pergunta 6: Validação por Friedman e Efeito Regional (H3) | 8:15 – 9:00 | 0m 45s | ~90 palavras |
+| **10** | Sensibilidade Metodológica: 82 vs. 92 Municípios | 9:00 – 9:30 | 0m 30s | ~60 palavras |
+| **11** | Síntese das Hipóteses, Limitações e Encerramento | 9:30 – 10:00 | 0m 30s | ~60 palavras |
+| **Total** | **Apresentação Oral Completa** | **0:00 – 10:00** | **10m 00s** | **~1.200 palavras** |
 
 ---
 
-### 1:15 – 2:30 | Bloco 2: Dados, Integridade e Decisões Metodológicas
-**Slide na Tela:** Slide 2 — Fontes, Validação Criptográfica e Painel dos 82 Municípios.
+## 2. Texto da Fala Slide a Slide
 
-**Fala Sugerida:**
-> *"Antes de examinar as trajetórias, destacamos três decisões metodológicas fundamentais:  
-> Primeira: as duas categorias utilizam bases demográficas distintas. O roubo de rua é calculado por 100 mil habitantes, enquanto o roubo de veículos é medido por 100 mil veículos registrados na frota. Por essa razão, não comparamos níveis absolutos entre as duas modalidades, mas sim suas tendências temporais.  
-> Segunda: na auditoria dos dados mensais, identificamos que dez municípios fluminenses apresentavam exatamente zero ocorrências registradas ao longo de 40 meses consecutivos no início da série (de janeiro de 2014 a abril de 2017). Como não é possível distinguir ausência real de ocorrências de falta de registro policial local, excluímos esses dez casos para construir um painel balanceado de 82 municípios, evitando distorções no cálculo das variações.  
-> Terceira: calculamos a taxa anual de cada município pela média de suas 12 taxas mensais, e a média do estado como a média não ponderada entre os municípios. Dessa forma, cada município tem peso unitário, descrevendo o comportamento do município fluminense típico sem que a Capital domine unilateralmente o indicador."*
-
----
-
-### 2:30 – 3:45 | Bloco 3: Pergunta 1 — Trajetória Agregada (H1)
-**Slide na Tela:** Slide 3 — `figuras/01_trajetorias.png` (Evolução temporal das taxas médias municipais, 2014–2024).
-
-**Fala Sugerida:**
-> *"Ao examinar a primeira pergunta — a evolução das taxas médias municipais —, constatamos uma redução substancial entre os extremos do período.  
-> Entre 2014 e 2024, a taxa média de roubo de rua recuou 56,0%, passando de 13,99 para 6,15 ocorrências por 100 mil habitantes ao mês. O roubo de veículos caiu 57,7%, passando de 20,78 para 8,80 por 100 mil veículos.  
-> No entanto, essa trajetória esteve longe de ser linear. Entre 2014 e 2017, o estado registrou forte escalada das taxas: o roubo de rua atingiu seu pico em 2016, com 20,89; o roubo de veículos alcançou o ápice em 2017, com 28,07.  
-> A redução sustentada tem início a partir de 2018 e se aprofunda em 2020, mantendo-se em patamares baixos até 2024.  
-> Portanto, a Hipótese 1 é confirmada: a média municipal em 2024 é substancialmente menor que em 2014. Resta verificar se essa redução se repetiu no território."*
+### Slide 1: Capa, Contexto e Hipóteses (0:00 – 1:15 | 148 palavras)
+> "Bom dia, professor João Rulff e colegas. Nosso trabalho investiga a dinâmica dos crimes patrimoniais no Estado do Rio de Janeiro entre 2014 e 2024, respondendo à pergunta central: a mudança observada na segurança pública foi igual para todos?
+> 
+> As estatísticas agregadas frequentemente divulgam quedas expressivas nos crimes. No entanto, números globais podem ocultar disparidades espaciais severas. Para estruturar nossa análise exploratória, formulamos três hipóteses orientadoras:
+> 
+> A primeira hipótese prevê que as taxas municipais médias de 2024 são menores do que as de 2014 em ambas as categorias analisadas: roubo de rua e roubo de veículo.
+> 
+> A segunda hipótese sustenta que essa redução não ocorreu de forma homogênea, revelando trajetórias divergentes entre macrorregiões e municípios.
+> 
+> A terceira hipótese propõe a existência de ciclos sazonais intra-anuais consistentes e compartilhados por todo o território fluminense.
+> 
+> Passamos agora às escolhas metodológicas que asseguram a reprodutibilidade dos resultados."
 
 ---
 
-### 3:45 – 5:15 | Bloco 4: Perguntas 2 e 3 — Disparidade Regional e Municipal (H2)
-**Slide na Tela:** Slides 4 e 5 — `figuras/02_regioes.png` e `figuras/03_mudancas_municipais.png`.
-
-**Fala Sugerida:**
-> *"Ao desagregar os dados em quatro macrorregiões — Capital, Baixada Fluminense, Grande Niterói e Interior —, a hipótese de homogeneidade é prontamente descartada.  
-> No roubo de veículos, enquanto a Baixada Fluminense caiu 45,7% (de 72,30 para 39,24) e a Grande Niterói recuou 76,5% (de 66,44 para 15,62), a Capital do Rio de Janeiro fechou 2024 com taxa de 41,96 roubos por 100 mil veículos — um aumento de 3,1% frente aos 40,71 de 2014.  
-> Ao examinar a série completa da Capital, nota-se que 2014 foi o menor nível pré-pandemia (5º menor dos 11 anos); a taxa veicular atingiu pico de 71,12 em 2017, recuou até 30,60 em 2023 e deu um repique de 37,1% em 2024.  
-> Quando descemos ao nível municipal, 56 dos 82 municípios registraram queda simultânea em ambas as categorias (65 em rua e 65 em veículos). Porém, 12 municípios apresentaram aumento em rua e 7 em veículos.  
-> O caso mais expressivo de aumento é Belford Roxo, onde a taxa de roubo de veículos subiu 17,45 pontos (de 95,78 em 2014 para 113,22 em 2024, tendo atingido pico histórico de 206,55 em 2018). Em contraste, municípios metropolitanos como Nilópolis (na Baixada) e São Gonçalo (na Grande Niterói) obtiveram reduções superiores a 90 pontos. Já os aumentos em rua ocorreram em municípios pequenos, como Três Rios (+1,34), Cardoso Moreira (+1,30) e Pinheiral (+0,91), onde poucas ocorrências nominais afetam muito a taxa.  
-> A Hipótese 2, portanto, se confirma com clareza: a mudança foi territorialmente desigual."*
+### Slide 2: Dados, Origem e Decisões Metodológicas (1:15 – 2:30 | 146 palavras)
+> "Trabalhamos com dados oficiais do Instituto de Segurança Pública (ISP-RJ), cobrindo 132 meses ininterruptos, de janeiro de 2014 a dezembro de 2024. Auditamos a integridade de todas as bases por hashes SHA-256 no notebook.
+> 
+> Uma decisão metodológica central foi a diferenciação dos denominadores: roubo de rua é mensurado por 100 mil habitantes, utilizando projeções populacionais do IBGE/TCU; roubo de veículos é calculado por 100 mil veículos, utilizando a frota do Senatran. Tratando-se de grandezas distintas, comparamos trajetórias temporais e variações relativas, nunca níveis absolutos entre crimes.
+> 
+> Além disso, excluímos dez municípios que apresentavam registro de ocorrências zerado entre 2014 e 2017, período de implantação de delegacias locais. Construímos assim um painel balanceado de 82 municípios e 10.824 observações, representando mais de 98% da população fluminense. Essa exclusão técnica evitou aumentos artificiais causados pelo simples início das notificações policiais."
 
 ---
 
-### 5:15 – 6:30 | Bloco 5: Perguntas 4 e 5 — Dispersão Intermunicipal e Roubos de Celular
-**Slide na Tela:** Slides 6 e 7 — `figuras/04_dispersao.png`, `figuras/05_composicao.png` e `figuras/07_decomposicao_rua.png`.
-
-**Fala Sugerida:**
-> *"Na Pergunta 4, analisamos a dispersão entre municípios. O intervalo interdecil (P90 menos P10) caiu mais de 50% em ambas as séries: de 41,12 para 18,43 em rua, e de 58,84 para 20,43 em veículos. Como o percentil 10 é zero na maioria dos anos, o P90-P10 reflete diretamente o recuo do percentil 90.  
-> Contudo, ao avaliar a dispersão relativa pelo Coeficiente de Variação, observamos o oposto: o CV subiu de 1,65 para 1,86 em rua (+12,8%) e de 1,61 para 2,27 em veículos (+41,1%). Isso significa que a desigualdade relativa entre municípios aumentou, pois a média recuou mais rapidamente do que a variabilidade entre cidades.  
-> Na Pergunta 5, examinamos a composição dos roubos de rua. Em 2014, o roubo de celular representava 8,1% do total registrado; em 2024, alcançou 36,6% — avanço de 28,5 pontos percentuais.  
-> Decompondo as contagens absolutas do painel, os roubos a transeunte caíram 61,6% (de 80.461 para 30.868) e os roubos em coletivo caíram 14,8% (de 7.314 para 6.235). Na direção contrária, os registros de roubo de celular saltaram 176,1%, passando de 7.758 para 21.416 ocorrências anuais, tendo atingido um pico de 26.779 em 2019.  
-> Duas hipóteses explicam esse padrão: a oportunidade econômica dos smartphones como alvos atrativos e portáteis, conforme a teoria das atividades rotineiras de Cohen e Felson (1979), e eventuais alterações nas rotinas de classificação e preenchimento de boletins nas delegacias. Ressaltamos que o PIX, lançado no final de 2020, não explica a maior parte desse avanço, que ocorreu entre 2014 e 2019."*
-
----
-
-### 6:30 – 7:45 | Bloco 6: Pergunta 6 — Sazonalidade, Teste de Friedman e Desagregação Regional (H3)
-**Slide na Tela:** Slides 8 e 9 — `figuras/06_perfil_mensal.png`, `figuras/08_sazonalidade_heatmap.png` e `figuras/09_sazonalidade_regional.png`.
-
-**Fala Sugerida:**
-> *"Na sexta pergunta, avaliamos a existência de padrões sazonais. Para controlar a duração variável dos meses, normalizamos as taxas pelo número de dias e geramos um índice padronizado em 100 para a média de cada ano e município.  
-> Como as observações mensais ao longo dos anos formam medidas pareadas por blocos anuais, aplicamos o teste não-paramétrico de Friedman em blocos.  
-> No período completo de 11 anos, o teste rejeita a hipótese nula em ambas as modalidades: Q = 35,74 (p = 0,00019) em veículos e Q = 21,78 (p = 0,0261) em rua. Removendo o ano atípico de 2020, a significância se mantém: Q = 30,05 (p = 0,00156) em veículos e Q = 20,58 (p = 0,0379) em rua.  
-> Porém, a desagregação regional que trouxemos no gráfico 09 revela um achado fundamental:  
-> No roubo de veículos, a sazonalidade é consistente e compartilhada por todo o estado, com pico regular em janeiro (~118 na Metropolitana e ~125 no Interior) e vale no inverno.  
-> Já no roubo de rua, o pico aparente de fevereiro na média estadual (115,5) é puxado exclusivamente pelo Interior (119,7), refletindo o afluxo de turistas e o Carnaval. Na Região Metropolitana, onde está a imensa maioria dos casos, o perfil mensal é praticamente plano, oscilando estreitamente entre 92,9 (dezembro) e 104,2 (outubro). Ano a ano, agosto foi o mês mais alto em 3 anos, e fevereiro em apenas 2 anos.  
-> A Hipótese 3 é, portanto, confirmada com robustez para veículos, mas qualificada como heterogênea e dominada pelo Interior em rua."*
+### Slide 3: Pergunta 1: Trajetórias das Médias Estaduais (2:30 – 3:30 | 122 palavras)
+> "Na primeira pergunta, examinamos a evolução da média municipal sem ponderação populacional, representando a experiência do município típico fluminense.
+> 
+> Entre as duas pontas da década, a taxa média de roubo de rua recuou de 13,99 para 6,15 por 100 mil habitantes, uma queda líquida de 56,0%. Já o roubo de veículos caiu de 20,78 para 8,80 por 100 mil veículos, retração de 57,7%.
+> 
+> Contudo, a trajetória não foi monótona: o estado enfrentou uma onda de expansão criminal durante a crise fiscal, com picos em 2016 para rua e 2017 para veículos, antes de consolidar a redução pós-2020.
+> 
+> Suavizando a comparação por triênios, a queda é de 56,5% em rua e 59,7% em veículos, corroborando a Hipótese 1."
 
 ---
 
-### 7:45 – 8:45 | Bloco 7: Análise de Sensibilidade (82 vs. 92 Municípios)
-**Slide na Tela:** Slide 10 — Tabela de Sensibilidade (82 vs. 92 Municípios, 2018–2024).
-
-**Fala Sugerida:**
-> *"Para checar se a exclusão dos dez municípios com registros iniciais zerados introduziu viés de seleção, realizamos uma análise de sensibilidade no período de 2018 a 2024, quando todos os 92 municípios fluminenses possuíam dados ininterruptos.  
-> Os resultados mostram equivalência entre as duas bases: no painel de 82 municípios, o roubo de rua caiu 69,6% e o de veículos recuou 64,3%; no conjunto completo de 92 municípios, as quedas foram de 69,7% e 64,5%, respectivamente.  
-> Isso confirma que o recorte do painel protegeu a integridade analítica do início da série sem comprometer as conclusões agregadas sobre a segurança pública no estado."*
-
----
-
-### 8:45 – 10:00 | Bloco 8: Conclusões, Limitações e Fechamento
-**Slide na Tela:** Slide 11 — Síntese das Hipóteses, Limitações e Encerramento.
-
-**Fala Sugerida:**
-> *"Em síntese, respondemos às três hipóteses do projeto:  
-> 1. A média municipal de roubos caiu mais de 55% entre 2014 e 2024, após picos em 2016 e 2017.  
-> 2. A mudança foi territorialmente desigual: a Capital fechou a década com alta em roubo de veículos (+3,1%), e Belford Roxo teve aumento substancial (+17,45 pontos), contrastando com quedas acentuadas em municípios vizinhos. Ao todo, 56 cidades tiveram queda simultânea em ambas as categorias.  
-> 3. A sazonalidade é estatisticamente consistente para roubo de veículos, mas ruidosa e dependente do Interior para roubo de rua. Paralelamente, o roubo de rua mudou de perfil: o celular passou de 8,1% para 36,6% das ocorrências (+176,1%).  
->  
-> Como limitações metodológicas, lembramos que os dados refletem registros formais em delegacias, sujeitos a subnotificação e incentivos de queixa. As médias com peso unitário retratam o município típico, e nossa análise é estritamente descritiva e exploratória, sem imputação de causalidade a políticas de segurança.  
-> Todo o material — notebook executado, dados com verificação de hash e apresentações — está disponível no repositório.  
-> Obrigado, e ficamos abertos às considerações do professor e dos colegas."*
+### Slide 4: Pergunta 2: Trajetórias Regionais das Taxas (3:30 – 4:30 | 125 palavras)
+> "Ao desagregar por macrorregiões segundo a classificação administrativa do ISP, a Hipótese 2 ganha evidência imediata.
+> 
+> Em roubo de veículos, a Baixada Fluminense despencou 65,2%, Grande Niterói recuou 60,1% e o Interior caiu 76,6%. Em contrapartida, a Capital encerrou 2024 com taxa de 41,96, patamar ligeiramente superior ao de 2014, marcando saldo positivo de 3,1%.
+> 
+> Essa elevação pontual não reflete uma tendência decenal de alta, mas sim um repique vigoroso de 37,1% ocorrido apenas entre 2023 e 2024. Quando comparamos médias trienais para amortecer volatilidades anuais, a Capital apresenta redução de 22,1%.
+> 
+> Em roubo de rua, a Baixada manteve em 2024 a maior taxa média do estado, com 23,18 por 100 mil habitantes."
 
 ---
 
-## Guia de Respostas para Perguntas
+### Slide 5: Pergunta 3: Alterações Municipais e Mapa Coroplético (4:30 – 5:30 | 126 palavras)
+> "Na escala municipal, 65 das 82 cidades reduziram roubo de rua e outras 65 reduziram roubo de veículos no ponto a ponto, com 56 quedas simultâneas. Por triênios, as quedas atingem 78 municípios em rua e 69 em veículos.
+> 
+> O mapa coroplético da Figura 10 exibe a predominância azul de reduções pelo território. No entanto, as disparidades intrametropolitanas são agudas.
+> 
+> Belford Roxo destaca-se como principal exceção: a taxa de veículos subiu 17,45 pontos no ponto a ponto e 5,41 pontos no triênio, atingindo 113,22 em 2024. Já municípios vizinhos obtiveram alívios históricos expressivos, como Nilópolis na Baixada, com recuo de quase 94 pontos, e São Gonçalo, com queda de 75 pontos."
 
-1. **Pergunta:** *"Por que usar média simples das taxas municipais em vez da taxa estadual agregada?"*  
-   **Resposta:** *"O foco da nossa pergunta é a distribuição territorial entre os municípios ('uma mudança igual para todos?'). Se somássemos todas as ocorrências e dividíssemos pela população estadual, a Capital e São Gonçalo responderiam por mais de metade do indicador, ocultando a dinâmica dos demais 80 municípios. Com peso unitário por município, retratamos a experiência do município fluminense típico."*
+---
 
-2. **Pergunta:** *"Por que utilizar o teste de Friedman em vez de Kruskal-Wallis para a sazonalidade?"*  
-   **Resposta:** *"Porque as observações mensais ao longo dos anos formam medidas pareadas organizadas em blocos temporais (anos), compartilhando o mesmo nível médio anual (índice 100). O teste de Kruskal-Wallis assume amostras independentes e ignora essa estrutura. O teste de Friedman trata os 12 meses como tratamentos pareados ao longo dos 11 anos, avaliando se a classificação ordinal dos meses se repete de maneira consistente de ano para ano sem exigir normalidade."*
+### Slide 6: Pergunta 4: Dispersão e Desigualdade Relativa (5:30 – 6:30 | 124 palavras)
+> "A quarta pergunta revela um dos paradoxos analíticos mais importantes do trabalho: a distância absoluta diminuiu, mas a desigualdade relativa aumentou.
+> 
+> A distância interdecil P90 menos P10 encolheu 55,2% em rua e 65,3% em veículos. Porém, como o décimo percentil é frequentemente nulo, esse estreitamento reflete apenas o rebaixamento do teto da distribuição.
+> 
+> Ao examinar o Coeficiente de Variação, a dispersão relativa subiu 28,8% em rua e 71,5% em veículos. No núcleo metropolitano do ISP, o CV de veículos avançou de 0,63 para 0,91.
+> 
+> O índice de Gini subiu de 0,72 para 0,75 em rua e de 0,70 para 0,80 em veículos. Hoje, apenas 8 municípios concentram quase 70% dos roubos de veículos."
 
-3. **Pergunta:** *"O teste de Friedman perde significância sem 2020?"*  
-   **Resposta:** *"Não. Calculando rigorosamente com scipy.stats.friedmanchisquare, o teste continua significante a 5% em ambas as categorias mesmo excluindo 2020: Q = 20,58 (p = 0,0379) para roubo de rua e Q = 30,05 (p = 0,00156) para veículos. A razão pela qual qualificamos a sazonalidade de roubo de rua como frágil não é o p-valor, mas a desagregação regional: na Região Metropolitana a curva mensal é praticamente plana (92,9 a 104,2) e o pico de fevereiro é um artefato do Interior (119,7). Além disso, ano a ano, agosto foi o pico em 3 anos e fevereiro em apenas 2 anos."*
+---
 
-4. **Pergunta:** *"O aumento do roubo de celular decorre do PIX?"*  
-   **Resposta:** *"O PIX foi lançado no final de 2020, enquanto a maior parte do salto de celular ocorreu entre 2014 e 2019 (de 7.758 para 26.779 registros anuais no painel), de modo que o sistema de pagamentos instantâneos não explica o movimento principal. Esse avanço é melhor compreendido pela crescente ubiquidade e valor econômico dos smartphones (teoria das atividades rotineiras de Cohen & Felson, 1979) e pelo aprimoramento na tipificação policial nos boletins de ocorrência."*
+### Slide 7: Pergunta 5: Celular nos Roubos de Rua (6:30 – 7:30 | 128 palavras)
+> "Na quinta pergunta, analisamos a recomposição interna dos roubos de rua. A fatia de roubo de celular saltou de 8,1% em 2014 para 36,6% em 2024, avanço de 28,5 pontos percentuais. Em volume absoluto, subiu de 7.758 para 21.416 ocorrências anuais.
+> 
+> Em sentido oposto, roubo a transeunte caiu 61,6% e roubo em coletivo recuou 14,8%.
+> 
+> Interpretamos essa transformação sob duas hipóteses concorrentes:
+> 
+> Primeiro, a teoria da oportunidade: smartphones tornaram-se bens portáteis de altíssima liquidez. O PIX em novembro de 2020 acelerou a atratividade, embora as contagens brutas já crescessem intensamente desde 2014, atingindo pico histórico em 2018.
+> 
+> Segundo, hipótese cartorária: o aprimoramento dos boletins de ocorrência nas delegacias, tipificando especificamente a subtração do celular em vez de enquadrá-la como transeunte genérico."
 
-5. **Pergunta:** *"A disparidade intermunicipal realmente diminuiu se o P90-P10 caiu?"*  
-   **Resposta:** *"Em termos absolutos, sim: a distância entre o percentil 90 e o percentil 10 recuou mais de 50%. Contudo, em termos relativos, o Coeficiente de Variação aumentou tanto em rua (+12,8%) quanto em veículos (+41,1%). Isso significa que, proporcionalmente à nova média, a heterogeneidade entre os municípios fluminenses se tornou maior em 2024 do que era em 2014."*
+---
 
-6. **Pergunta:** *"Qual foi a divisão de trabalho da equipe e por que o repositório é de Mateus Cavalcanti?"*  
-   **Resposta:** *"O projeto foi iniciado e desenvolvido conjuntamente pelo trio Mateus Cavalcanti, Pedro Braga e Felipe nos Marcos 1 e 2. Mateus foi responsável pela infraestrutura inicial do ambiente reprodutível em Nix e pela governança de integridade por SHA-256. No início do Marco 3, Mateus desligou-se da disciplina. A dupla Pedro Braga e Felipe assumiu a condução, revisão metodológica, cálculos do teste de Friedman, análise de dispersão relativa, decomposição estrutural e finalização completa do Marco 3, mantendo o histórico e os créditos pelo trabalho realizado nos marcos anteriores."*
+### Slide 8: Pergunta 6: Perfis Mensais e Normalização (7:30 – 8:15 | 92 palavras)
+> "Para investigar a sazonalidade, dividimos as taxas pelos dias efetivos de cada mês e indexamos a média anual local em 100.
+> 
+> Em roubo de veículos, identificamos um ciclo consistente em todo o estado: pico recorrente no verão, com janeiro alcançando 123,9 no painel e 118,2 na área metropolitana, contra vales profundos no inverno, atingindo mínima em julho de 88,6 na metrópole.
+> 
+> Já em roubo de rua, a média estadual indica aparente ápice em fevereiro, mas na área metropolitana o perfil é plano, variando suavemente entre 94,6 e 103,9."
+
+---
+
+### Slide 9: Pergunta 6: Validação por Friedman e Efeito Regional (8:15 – 9:00 | 95 palavras)
+> "Submetemos os índices ao teste não paramétrico de Friedman em blocos. No painel geral, a hipótese nula de igualdade mensal foi rejeitada em ambos os crimes.
+> 
+> Porém, a desagregação regional e o coeficiente W de Kendall desfazem a ilusão: no núcleo metropolitano do ISP, roubo de rua não apresenta significância estatística (Q = 11,71, p = 0,386 e W = 0,10). O pico de fevereiro decorre do Interior (122,4), formulando-se a hipótese de impacto do veraneio e Carnaval.
+> 
+> Ao testar contagens estaduais brutas, a sazonalidade de rua também desaparece (p = 0,135), provando que não afeta a massa da população."
+
+---
+
+### Slide 10: Sensibilidade Metodológica: 82 vs. 92 Municípios (9:00 – 9:30 | 62 palavras)
+> "Para garantir que a exclusão inicial de dez municípios não enviesou a tendência temporal, recalculamos as variações no intervalo em que todo o estado possuía dados válidos, de 2018 a 2024.
+> 
+> Nos 82 municípios, a queda foi de 69,6% em rua e 64,3% em veículos. Nos 92 municípios, foi de 69,7% e 64,5%. A diferença é inferior a 0,2 ponto percentual, atestando a solidez da amostra."
+
+---
+
+### Slide 11: Síntese das Hipóteses e Considerações Finais (9:30 – 10:00 | 64 palavras)
+> "Concluímos: a Hipótese 1 é corroborada pelas quedas médias superiores a 55%. A Hipótese 2 é plenamente corroborada pela heterogeneidade regional, com aumento da desigualdade relativa. A Hipótese 3 é qualificada: há forte sazonalidade em veículos, mas ausência de ciclo em roubo de rua metropolitano.
+> 
+> Respondendo ao nosso título: não, a mudança não foi igual para todos. Agradecemos a atenção e abrimos para perguntas."
+
+---
+
+## 3. Guia de Perguntas Prováveis da Banca (Q&A)
+
+### Pergunta 1: Por que não incluíram um mapa coroplético antes, se a pergunta é eminentemente territorial?
+**Resposta sugerida:**  
+> "Apresentamos no Marco 3 a Figura 10 e o Slide 5, que exibem o mapa coroplético das variações municipais suavizadas por triênios (2014–16 vs. 2022–24) a partir da malha GeoJSON oficial do IBGE. O mapa evidencia visualmente a predominância territorial de reduções (tons azuis) e permite identificar com clareza as poucas exceções de elevação ou estabilidade concentradas na Baixada e em pequenas cidades do Interior."
+
+### Pergunta 2: O Coeficiente de Variação (CV) não subiu apenas porque as taxas do Interior foram a quase zero?
+**Resposta sugerida:**  
+> "Não. Para controlar essa sensibilidade, recalculamos as medidas de dispersão relativa restritas ao núcleo metropolitano do ISP (Capital, Baixada e Grande Niterói): o CV de veículos saltou de 0,63 para 0,91 (+44,1%). Além disso, o índice de Gini do painel completo subiu de 0,72 para 0,75 em rua e de 0,70 para 0,80 em veículos. O aumento da concentração relativa é real e afeta tanto a metrópole quanto o interior."
+
+### Pergunta 3: A Capital realmente registrou alta em roubo de veículos ao longo da década?
+**Resposta sugerida:**  
+> "Apenas na comparação pontual das extremidades (40,71 em 2014 para 41,96 em 2024, +3,1%). Esse saldo pontual foi causado pelo repique atípico de +37,1% em 2024 sobre os 30,60 de 2023. Ao utilizarmos a comparação suavizada por triênios (2014–2016 versus 2022–2024), a média da Capital cai de 46,26 para 36,03, registrando recuo de 22,1%. Não houve tendência decenal de alta, mas sim um repique de encerramento de período."
+
+### Pergunta 4: O p-valor do teste de Friedman é baixo, mas o tamanho do efeito (magnitude) é substantivo?
+**Resposta sugerida:**  
+> "O coeficiente de concordância W de Kendall qualifica a magnitude: no painel estadual, W é de 0,18 em rua (fraco) e 0,30 em veículos (moderado). No núcleo metropolitano, W de rua cai para 0,10 com p = 0,386 (efeito estatisticamente nulo). Já em veículos, W permanece em 0,23 com p = 0,0035, confirmando que a sazonalidade de veículos é um fenômeno de efeito consistente, enquanto a de rua na metrópole inexiste."
+
+### Pergunta 5: O índice sazonal estadual não é distorcido pelo peso igual dado a municípios pequenos?
+**Resposta sugerida:**  
+> "Sim, esse risco de falácia ecológica foi exatamente o motivo pelo qual conduzimos duas verificações complementares: o teste de Friedman desagregado por macrorregiões e o teste sobre contagens brutas agregadas estaduais (ponderação implícita pela população). Em ambas as verificações, a sazonalidade de roubo de rua desaparece estatisticamente (p = 0,386 no núcleo metropolitano e p = 0,135 nas contagens brutas), provando que o pico de fevereiro no painel é efeito restrito ao Interior turístico."
+
+### Pergunta 6: O que explica a acentuada onda de elevação com pico em 2016 e 2017?
+**Resposta sugerida:**  
+> "Os picos de 2016 (roubo de rua) e 2017 (roubo de veículos) coincidem com o ápice da crise político-fiscal e financeira do Estado do Rio de Janeiro, marcada pelo decreto de calamidade pública pré-Olimpíadas, atrasos salariais crônicos nas forças de segurança, colapso de policiamento ostensivo e crise no programa das UPPs. A inflexão para a queda consolida-se após a intervenção federal na segurança pública de 2018 e aprofunda-se na pandemia de 2020."

@@ -6,11 +6,11 @@
 
 ---
 
-## 1. Visão Geral da Coordenação da Equipe
+## 1. Visão Geral da Colaboração
 
-A equipe trabalhou em regime de colaboração horizontal e contínua ao longo de todo o semestre letivo (Marcos 1, 2 e 3). Todas as decisões estruturais — incluindo o recorte do problema, a definição das hipóteses, a exclusão preventiva dos dez municípios na auditoria de dados e as escolhas de codificação visual — foram amplamente debatidas e consensuadas pelo trio.
+O projeto foi desenvolvido de forma colaborativa pelos três integrantes ao longo do semestre letivo (Marcos 1, 2 e 3). As decisões analíticas fundamentais — definição das hipóteses de pesquisa, identificação dos registros zerados na auditoria inicial, adoção do painel balanceado de 82 municípios e escolha dos testes estatísticos — foram discutidas e acordadas conjuntamente pela equipe.
 
-Para assegurar o cumprimento rigoroso dos critérios de avaliação (Implementação Técnica: 35%, Design de Visualização: 30%, Análise e Achados: 20%, Comunicação: 10%, Trabalho em Equipe: 5%), a divisão de responsabilidades técnicas especializadas foi estruturada de forma equilibrada, conforme detalhado a seguir.
+A distribuição de tarefas técnicas e analíticas foi organizada conforme a matriz e o detalhamento a seguir.
 
 ---
 
@@ -18,38 +18,38 @@ Para assegurar o cumprimento rigoroso dos critérios de avaliação (Implementa�
 
 | Etapa / Dimensão do Projeto | Mateus Cavalcanti | Pedro Braga | Felipe |
 |---|:---:|:---:|:---:|
-| **Concepção e Hipóteses** | Formulação de H1 e H2 | Formulação de H3 e escopo | Refinamento teórico |
-| **Pipeline e Engenharia de Dados** | Ambiente Nix e hash SHA-256 | Limpeza e imputação (Paraty) | Auditoria e consistência |
-| **Modelagem e Estatística** | Normalização diária e quantis | Teste Kruskal-Wallis e sensibilidade | Decomposição transeunte/celular |
-| **Visualizações Estáticas (Matplotlib/Seaborn)** | Gráficos 01 e 02 | Gráficos 03, 07 e 08 | Gráficos 04, 05 e 06 |
-| **Visualizações Interativas (Plotly)** | Arquitetura Plotly | Callbacks e layout responsivo | Integração HTML offline |
-| **Redação Acadêmica do Notebook** | Seções 1, 2 e 3 | Seções 6, 9 e 11 | Seções 4, 5, 7 e 8 |
-| **Apresentação Oral (10 min) e Slides** | Roteiro dos blocos 1 a 3 | Roteiro dos blocos 4 a 6 e slides HTML | Roteiro dos blocos 7 e 8 e Q&A |
+| **Concepção e Hipóteses** | Formulação de H1 e H2 | Formulação de H3 | Refinamento teórico e perguntas |
+| **Pipeline e Engenharia de Dados** | Ambiente Nix e hash SHA-256 | Processamento de taxas e datas | Auditoria inicial de consistência |
+| **Modelagem e Estatística** | Agregações temporais e regionais | Normalização diária, P90-P10 e CV | Teste de Friedman e sensibilidade |
+| **Visualizações Estáticas (Matplotlib/Seaborn)** | Gráficos 01 e 02 | Gráficos 03, 04 e 08 | Gráficos 05, 06 e 07 |
+| **Visualização Interativa** | Gráfico regional em Plotly | Revisão visual e layout | Exportação HTML |
+| **Redação do Notebook e Relatório** | Seções 1, 2 e 3 | Seções 4, 6 e 9 | Seções 5, 7, 8 e 10 |
+| **Apresentação Oral e Slides** | Revisão dos slides | Estrutura dos slides e roteiro | Guia de perguntas e respostas |
 
 ---
 
 ## 3. Detalhamento das Contribuições Individuais
 
 ### Pedro Braga
-- **Liderança em Análise Estatística e Sazonalidade:** Concepção e implementação da normalização diária das taxas e execução do teste não-paramétrico de Kruskal-Wallis para a Pergunta 6, convertendo a hipótese estacional aberta do Marco 2 em resultado estatisticamente validado ($p < 0,05$).
-- **Análise Espacial e Casos Extremos:** Processamento e geração da visualização divergente dos municípios em destaque (Pergunta 3), identificando e investigando a anomalia crítica de Belford Roxo (+17,43 pontos em roubo de veículo).
-- **Comunicação Visual e Apresentação:** Desenvolvimento da estrutura da apresentação oral de 10 minutos (`roteiro_apresentacao_marco3.md`) e da apresentação interativa de slides em HTML (`apresentacao_marco3.html`), garantindo alinhamento estético e aderência ao tempo estipulado.
-- **Redação e Revisão:** Redação das seções analíticas de sazonalidade, discussão dos municípios em destaque e participação central na conclusão e limites do estudo.
+- **Análise de Dispersão e Variação:** Cálculo e interpretação das métricas de dispersão intermunicipal (Pergunta 4), incluindo tanto o intervalo interdecil (P90-P10) quanto o Coeficiente de Variação (CV), documentando o aumento da desigualdade relativa entre municípios.
+- **Análise Espacial e Casos Extremos:** Processamento das variações municipais (Pergunta 3) e elaboração do gráfico de barras divergentes (`03_mudancas_municipais.png`), analisando o comportamento atípico de Belford Roxo.
+- **Normalização Temporal e Heatmap:** Implementação da normalização diária das taxas mensais e codificação do mapa de calor de sazonalidade (`08_sazonalidade_heatmap.png`), ajustando a visualização dos rótulos anuais.
+- **Material de Apresentação:** Desenvolvimento dos slides em HTML (`apresentacao_marco3.html`), geração do PDF correspondente (`apresentacao_marco3.pdf`) e redação do roteiro detalhado de fala de 10 minutos (`roteiro_apresentacao_marco3.md`).
 
 ### Mateus Cavalcanti
-- **Arquitetura de Reprodutibilidade:** Configuração do ambiente reprodutível baseado em Nix (`flake.nix` e `flake.lock`), garantindo versões transitivas exatas do Python, bibliotecas e kernel Jupyter em arquiteturas ARM e x86.
-- **Auditoria Criptográfica e Governança de Dados:** Implementação da rotina de validação por SHA-256 (`fontes.json`), assegurando a integridade dos dados brutos do ISP-RJ contra revisões não documentadas.
-- **Visualização das Trajetórias e Disparidades Regionais:** Codificação visual dos gráficos de evolução temporal geral (`01_trajetorias.png`) e das trajetórias regionais (`02_regioes.png`), destacando o comportamento anômalo da Capital em roubos de veículos.
-- **Visualização Interativa:** Criação da versão interativa em Plotly (`figuras/regioes_interativo.html`), com controle de legendas e renderização independente offline.
+- **Ambiente e Reprodutibilidade:** Configuração do ambiente Nix (`flake.nix` e `flake.lock`), garantindo versões fixadas do Python, Jupyter e pacotes científicos para diferentes sistemas operacionais.
+- **Auditoria Criptográfica:** Implementação da verificação automática de integridade dos arquivos de dados brutos por hash SHA-256 a partir de `data/fontes.json`.
+- **Trajetórias Temporais e Regionais:** Processamento das taxas médias municipais (Pergunta 1) e das séries regionais (Pergunta 2), gerando os gráficos `01_trajetorias.png` e `02_regioes.png`.
+- **Visualização Interativa:** Criação da versão interativa das séries regionais em Plotly (`figuras/regioes_interativo.html`), permitindo inspeção de valores pontuais por ano e região.
 
 ### Felipe
-- **Auditoria de Qualidade e Recorte Territorial:** Condução da auditoria minuciosa que detectou os 40 meses consecutivos zerados em dez municípios, fundamentando tecnicamente a criação do painel balanceado de 82 municípios e a análise de sensibilidade com os 92 municípios pós-2018.
-- **Decomposição Estrutural dos Roubos:** Análise aprofundada da Pergunta 5 e derivação do gráfico de decomposição tripla (`07_decomposicao_rua.png`), quantificando a substituição histórica de roubos a transeunte e em coletivo pelo roubo de smartphones.
-- **Análise de Dispersão:** Implementação das curvas de quantis (P10, Mediana e P90) para a Pergunta 4 (`04_dispersao.png`), mensurando o estreitamento da desigualdade absoluta intermunicipal.
-- **Documentação e Síntese:** Estruturação da documentação metodológica, consolidação das referências bibliográficas do ISP-RJ e elaboração do guia de respostas às perguntas difíceis da banca examinadora.
+- **Auditoria de Dados e Recorte Territorial:** Condução da auditoria que identificou 40 meses consecutivos de registros zerados em dez municípios fluminenses (2014 a abril de 2017), justificando a definição do painel balanceado de 82 municípios.
+- **Decomposição dos Roubos de Rua:** Coleta e processamento das contagens absolutas de ocorrências do ISP-RJ para a Pergunta 5, gerando o gráfico de decomposição empilhada (`07_decomposicao_rua.png`) entre transeunte, coletivo e celular.
+- **Validação Estatística de Sazonalidade:** Implementação do teste de Friedman em blocos (`scipy.stats.friedmanchisquare`) para avaliar a sazonalidade mensal (Pergunta 6), com e sem o ano atípico de 2020.
+- **Análise de Sensibilidade e Referências:** Execução do teste de sensibilidade comparando os 82 municípios do painel com os 92 municípios do estado no período de 2018 a 2024, além do levantamento das referências metodológicas do ISP-RJ e da literatura criminológica.
 
 ---
 
-## 4. Declaração de Autoria e Integridade
+## 4. Declaração de Integridade
 
-Os integrantes declaram que todo o código-fonte, transformações analíticas, codificações gráficas e interpretações textuais presentes no repositório final foram desenvolvidos pelos próprios autores para fins acadêmicos na disciplina de AEDV, com dados estritamente públicos e verificáveis.
+Os integrantes declaram que o código, análises, figuras e textos apresentados na entrega final foram elaborados pela equipe no âmbito da disciplina de AEDV, com base exclusiva em dados públicos oficiais do Instituto de Segurança Pública do Estado do Rio de Janeiro (ISP-RJ).

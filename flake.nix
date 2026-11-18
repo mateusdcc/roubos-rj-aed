@@ -1,5 +1,5 @@
 {
-  description = "Ambiente reprodutivel do Marco 2 de AEDV: roubos no RJ";
+  description = "Ambiente reprodutivel do Marco 3 de AEDV: roubos no RJ";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 
@@ -12,7 +12,7 @@
           pkgs = import nixpkgs { inherit system; };
           python = pkgs.python312.withPackages (ps: with ps; [
             jupyterlab ipykernel nbconvert nbformat
-            pandas numpy matplotlib seaborn plotly
+            pandas numpy matplotlib seaborn plotly scipy
           ]);
         in {
           default = pkgs.mkShell {

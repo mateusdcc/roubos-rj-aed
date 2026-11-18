@@ -2,7 +2,7 @@
 **Disciplina:** Análise Exploratória de Dados e Visualização — FGV EMAp (2026.2)  
 **Professor:** João Rulff  
 **Título do Projeto:** Roubos no Rio de Janeiro: uma mudança igual para todos?  
-**Integrantes:** Mateus Cavalcanti, Pedro Braga e Felipe  
+**Integrantes:** Pedro Braga e Felipe  
 **Base do Projeto:** `marco3.ipynb` e `marco3.html`  
 
 ---

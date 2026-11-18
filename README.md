@@ -2,7 +2,7 @@
 
 Projeto Final de Análise Exploratória de Dados e Visualização (AEDV), FGV EMAp, 2026.2.  
 **Docente:** Prof. João Rulff  
-**Integrantes:** Mateus Cavalcanti, Pedro Braga e Felipe.
+**Integrantes:** Pedro Braga e Felipe.
 
 ---
 

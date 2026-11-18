@@ -12,7 +12,7 @@ Projeto Final de Análise Exploratória de Dados e Visualização (AEDV), FGV EM
 - **[Notebook Executado (Jupyter)](marco3.ipynb)** — Código-fonte completo com saídas, testes e gráficos executados.
 - **[Artigo Final em HTML](marco3.html)** — Relatório acadêmico completo formatado e renderizado.
 - **[Apresentação de Slides em PDF](apresentacao_marco3.pdf)** — Slides da apresentação final em formato PDF (11 slides).
-- **[Apresentação de Slides Interativa (10 min)](apresentacao_marco3.html)** — Slides com cronometragem unificada, atalhos de navegação e notas do orador (ocultas por padrão; tecla 'S' para alternar).
+- **[Apresentação de Slides Interativa](apresentacao_marco3.html)** — Slides interativos com atalhos de navegação e notas do orador (ocultas por padrão; tecla 'S' para alternar).
 - **[Roteiro da Apresentação Oral](roteiro_apresentacao_marco3.md)** — Estrutura minuto a minuto (0:00 a 10:00, ~1.200 palavras de fala) e guia de perguntas e respostas para a banca examinadora.
 - **[Declaração de Contribuições Individuais](contribuicoes.md)** — Histórico da equipe, matriz e detalhamento das responsabilidades técnicas de cada integrante.
 - **[Visualização Interativa das Regiões](figuras/regioes_interativo.html)** — Gráfico Plotly com curvas regionais e inspeção de pontos (funciona offline).
@@ -90,7 +90,7 @@ jupyter nbconvert --to html marco3.ipynb
 ├── marco3.ipynb                   # Notebook final executado
 ├── marco3.html                    # Artigo final exportado em HTML
 ├── apresentacao_marco3.pdf        # Apresentação de slides em PDF (11 slides)
-├── apresentacao_marco3.html       # Apresentação interativa de slides (10 min)
+├── apresentacao_marco3.html       # Apresentação interativa de slides (11 slides)
 ├── roteiro_apresentacao_marco3.md # Roteiro detalhado de fala e guia de perguntas
 ├── contribuicoes.md               # Declaração formal de contribuições individuais
 ├── flake.nix / flake.lock         # Configuração de reprodutibilidade em Nix

@@ -2,8 +2,7 @@
 
 Projeto Final de Análise Exploratória de Dados e Visualização (AEDV), FGV EMAp, 2026.2.  
 **Docente:** Prof. João Rulff  
-**Autores (Marco 3):** Pedro Tolentino Pires Braga e Felipe.  
-*(Nota histórica: Mateus Cavalcanti colaborou nos Marcos 1 e 2 na infraestrutura inicial de reprodutibilidade e governança de dados; o Marco 3 foi integralmente assumido, reestruturado e finalizado por Pedro Braga e Felipe após o desligamento de Mateus do grupo e da disciplina).*
+**Autores (Marco 3):** Pedro Tolentino Pires Braga e Felipe.
 
 ---
 

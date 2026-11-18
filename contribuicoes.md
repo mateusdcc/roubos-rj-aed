@@ -9,14 +9,14 @@
 
 ## 1. Contextualização da Equipe e Histórico do Projeto
 
-O projeto foi iniciado e desenvolvido em regime de colaboração por **Mateus Cavalcanti, Pedro Braga e Felipe** durante os Marcos 1 e 2 do semestre letivo. Naquela etapa inicial conjunta, delinearam-se as primeiras ideias sobre as perguntas de pesquisa, o recorte técnico do painel balanceado de 82 municípios fluminenses e as versões preliminares das séries temporais.
+Iniciamos e desenvolvemos o projeto em regime de colaboração com **Mateus Cavalcanti** durante os Marcos 1 e 2 do semestre letivo. Naquela etapa inicial conjunta, delineamos as primeiras ideias sobre as perguntas de pesquisa, o recorte técnico do painel balanceado de 82 municípios fluminenses e as versões preliminares das séries temporais.
 
-No início do desenvolvimento do Marco 3 (Entrega Final), Mateus Cavalcanti desligou-se formalmente do grupo e da disciplina. Uma versão preliminar de rascunho arquivada em 17/11 ainda espelhava a estrutura inicial antes da consolidação desse desligamento. No documento definitivo do Marco 3, os autores registram com total clareza e transparência o crédito devido pelas contribuições de Mateus circunscritas exclusivamente aos Marcos 1 e 2:
+No início do desenvolvimento do Marco 3 (Entrega Final), Mateus Cavalcanti desligou-se formalmente do grupo e da disciplina. Uma versão preliminar de rascunho arquivada em 17/11 ainda espelhava a estrutura inicial antes da consolidação desse desligamento. No documento definitivo do Marco 3, registramos com total clareza e transparência o crédito devido pelas contribuições de Mateus circunscritas exclusivamente aos Marcos 1 e 2:
 - Configuração inicial da infraestrutura reprodutível baseada no Nix (`flake.nix` e `flake.lock`);
 - Implementação preliminar do mecanismo de governança e integridade dos dados brutos com verificação de hashes SHA-256 (`data/fontes.json`);
 - Criação e hospedagem do repositório remoto inicial no GitHub (`mateusdcc/roubos-rj-aed`).
 
-Todas as atividades subsequentes do Marco 3 — reformulação metodológica, desenho e formalização estatística das hipóteses H1, H2 e H3, implementação dos triênios suavizados, testes não paramétricos de Friedman em blocos pareados por grupos, cálculo do coeficiente de concordância $W$ de Kendall, teste de ponderação populacional, geração do mapa coroplético simétrico e confecção integral dos relatórios e slides — foram assumidas, reprogramadas e concluídas exclusivamente pela dupla **Pedro Braga e Felipe** (Felipe identificado pelo prenome institucional conforme registros dos Marcos 1 e 2 na EMAp).
+Todas as atividades subsequentes do Marco 3 — reformulação metodológica, desenho e formalização estatística das hipóteses H1, H2 e H3, implementação dos triênios suavizados, testes não paramétricos de Friedman em blocos pareados por grupos, cálculo do coeficiente de concordância $W$ de Kendall, teste de ponderação populacional, geração do mapa coroplético simétrico e confecção integral dos relatórios e slides — foram assumidas, reprogramadas e concluídas exclusivamente por nós dois, **Pedro Braga e Felipe** (Felipe identificado pelo prenome institucional conforme registros dos Marcos 1 e 2 na EMAp).
 
 ---
 
@@ -54,4 +54,4 @@ Todas as atividades subsequentes do Marco 3 — reformulação metodológica, de
 
 ## 4. Declaração de Integridade
 
-Os pesquisadores declaram que todo o código, análises estatísticas, visualizações e interpretações conceituais apresentados no Marco 3 foram elaborados para fins estritamente acadêmicos na disciplina de AEDV da FGV EMAp, com base exclusiva em dados abertos públicos e oficiais do Instituto de Segurança Pública do Estado do Rio de Janeiro (ISP-RJ).
+Declaramos que todo o código, análises estatísticas, visualizações e interpretações conceituais apresentados no Marco 3 foram elaborados por nós para fins estritamente acadêmicos na disciplina de AEDV da FGV EMAp, com base exclusiva em dados abertos públicos e oficiais do Instituto de Segurança Pública do Estado do Rio de Janeiro (ISP-RJ).
